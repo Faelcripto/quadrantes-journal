@@ -1,0 +1,156 @@
+{
+  "updatedAt": "2026-09-28T14:20:55.395930+00:00",
+  "weekStart": "2026-09-28",
+  "weekEnd": "2026-10-02",
+  "heading": "Abertura da semana: dólar, energia e inflação",
+  "summary": "Edição de abertura de 28/09, com fatos disponíveis até esta atualização. A agenda até 02/10 reúne emprego nos EUA, PCE e inflação preliminar da zona do euro. Os resultados desses eventos ainda não foram divulgados.",
+  "news": [
+    {
+      "id": "usd-20260928",
+      "date": "2026-09-28",
+      "tag": "DÓLAR / EURO",
+      "title": "Dólar inicia a semana firme; euro segue pressionado",
+      "summary": "A Reuters descreveu o dólar próximo da máxima de dois meses e o euro perto da mínima desse período, em meio à alta do petróleo e dos rendimentos americanos. Registro intradiário, não fechamento.",
+      "watch": "Compare a reação às próximas divulgações com as expectativas já presentes nos preços.",
+      "source": {
+        "label": "Reuters · 28 set",
+        "url": "https://www.reuters.com/world/africa/dollar-firms-us-iran-tensions-lift-oil-hawkish-fed-bets-build-2026-09-28/"
+      }
+    },
+    {
+      "id": "gold-20260928",
+      "date": "2026-09-28",
+      "tag": "OURO",
+      "title": "Ouro recua com pressão de juros e dólar",
+      "summary": "Na manhã de segunda, a Reuters relatou queda superior a 3% do ouro à vista e mínima de mais de sete semanas. A reportagem relacionou o movimento à alta do petróleo, do dólar e dos rendimentos dos títulos americanos.",
+      "watch": "Para acompanhar o XAUUSD, observe juros e dólar junto do gráfico. O movimento intradiário pode mudar antes do fechamento.",
+      "source": {
+        "label": "Reuters · 28 set",
+        "url": "https://www.reuters.com/world/india/gold-drops-more-than-1-us-rate-hike-bets-2026-09-28/"
+      }
+    },
+    {
+      "id": "euro-inflation-agenda-20260928",
+      "date": "2026-09-28",
+      "tag": "AGENDA EURO",
+      "title": "Inflação preliminar da zona do euro é foco na sexta",
+      "summary": "A Eurostat indica 2 de outubro para a próxima divulgação da estimativa preliminar de inflação. Trata-se de um evento futuro; esta edição não apresenta resultado nem consenso para setembro.",
+      "watch": "Avalie a composição da inflação e o que ela pode mudar nas expectativas para o BCE.",
+      "source": {
+        "label": "Eurostat · próxima divulgação",
+        "url": "https://ec.europa.eu/eurostat/web/products-euro-indicators/w/2-01092026-ap"
+      }
+    }
+  ],
+  "scenarios": [
+    {
+      "currency": "USD",
+      "rate": "3,75%–4,00%",
+      "rateLabel": "Faixa dos Fed funds",
+      "asOf": "2026-09-16",
+      "facts": "O Fed elevou a faixa em 0,25 ponto percentual e descreveu inflação elevada e atividade econômica sólida.",
+      "interpretation": "O diferencial de juros pode apoiar o dólar. Nesta semana, PCE e emprego podem reforçar ou enfraquecer essa leitura: dados firmes não garantem alta se já estiverem incorporados aos preços.",
+      "sources": [
+        {
+          "label": "Federal Reserve · decisão de 16 set",
+          "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm"
+        }
+      ]
+    },
+    {
+      "currency": "EUR",
+      "rate": "2,50%",
+      "rateLabel": "Taxa de depósito do BCE",
+      "asOf": "2026-09-16",
+      "facts": "O BCE elevou a taxa de depósito em 0,25 ponto, com vigência em 16 de setembro. A decisão apontou inflação pressionada por energia e incerteza sobre o crescimento.",
+      "interpretation": "A alta de juros do BCE pode apoiar o euro, enquanto energia cara pode pressionar a atividade. A estimativa de inflação desta semana ajudará a avaliar esse equilíbrio; sua divulgação ainda é aguardada.",
+      "sources": [
+        {
+          "label": "BCE · decisão de 10 set",
+          "url": "https://www.ecb.europa.eu/press/pr/date/2026/html/ecb.mp260910~314e508016.en.html"
+        }
+      ]
+    }
+  ],
+  "comparison": "As taxas de referência continuam superiores nos EUA. Para o EUR/USD, acompanhe em conjunto PCE e emprego americanos e inflação da zona do euro: mudanças relativas nas expectativas de Fed e BCE podem ser mais relevantes que um número isolado. Esta é uma interpretação condicional, sem indicação de entrada.",
+  "events": [
+    {
+      "id": "jolts-2026-08",
+      "title": "JOLTS · vagas de emprego",
+      "currency": "USD",
+      "date": "2026-09-29",
+      "at": "2026-09-29T14:00:00Z",
+      "source": {
+        "label": "BLS · agenda JOLTS",
+        "url": "https://www.bls.gov/schedule/news_release/jolts.htm"
+      },
+      "why": "Sinaliza demanda por trabalhadores e pode alterar a leitura sobre os juros do Fed."
+    },
+    {
+      "id": "gdp-2026-q2-third",
+      "title": "PIB dos EUA · 3ª estimativa do 2º trimestre",
+      "currency": "USD",
+      "date": "2026-09-30",
+      "at": "2026-09-30T12:30:00Z",
+      "source": {
+        "label": "BEA · calendário oficial",
+        "url": "https://www.bea.gov/news/schedule"
+      },
+      "why": "Revisões de crescimento podem influenciar expectativas de juros e de atividade."
+    },
+    {
+      "id": "pce-2026-08",
+      "title": "Inflação PCE, renda e gastos pessoais",
+      "currency": "USD",
+      "date": "2026-09-30",
+      "at": "2026-09-30T12:30:00Z",
+      "source": {
+        "label": "BEA · calendário oficial",
+        "url": "https://www.bea.gov/news/schedule"
+      },
+      "why": "O PCE é uma referência central para o objetivo de inflação do Fed."
+    },
+    {
+      "id": "hicp-2026-09-flash",
+      "title": "Inflação da zona do euro · estimativa preliminar de setembro",
+      "currency": "EUR",
+      "date": "2026-10-02",
+      "at": null,
+      "source": {
+        "label": "Eurostat · próxima divulgação confirmada",
+        "url": "https://ec.europa.eu/eurostat/web/products-euro-indicators/w/2-01092026-ap"
+      },
+      "why": "Primeira leitura da inflação do mês, relevante para o cenário do BCE. Data confirmada; horário ainda não verificado nesta edição."
+    },
+    {
+      "id": "payroll-2026-09",
+      "title": "Payroll e taxa de desemprego",
+      "currency": "USD",
+      "date": "2026-10-02",
+      "at": "2026-10-02T12:30:00Z",
+      "source": {
+        "label": "BLS · calendário de outubro",
+        "url": "https://www.bls.gov/schedule/2026/10_sched.htm"
+      },
+      "why": "Emprego, salários e revisões ajudam a avaliar atividade e pressão inflacionária."
+    },
+    {
+      "id": "trade-2026-08",
+      "title": "Balança comercial dos EUA · agosto",
+      "currency": "USD",
+      "date": "2026-10-06",
+      "at": "2026-10-06T12:30:00Z",
+      "source": {
+        "label": "BEA · calendário oficial",
+        "url": "https://www.bea.gov/news/schedule"
+      },
+      "why": "Exportações e importações ajudam a acompanhar a demanda e a contribuição do comércio ao crescimento."
+    }
+  ],
+  "notes": [
+    "Edição de abertura: fatos verificados em 28/09/2026. As notícias intradiárias não representam o fechamento da semana.",
+    "Seleção de eventos relevantes para dólar e euro; não é uma agenda mundial completa.",
+    "Horários em Brasília. Quando não confirmado, o horário aparece explicitamente como pendente.",
+    "Análise de contexto para estudo, sem indicação de compra ou venda."
+  ]
+}
