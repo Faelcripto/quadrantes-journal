@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Quadrantes Journal",
+  title: "Diário de Trader | Quadrantes",
   description: "Seu processo, suas operações, sua evolução. Diário de trading do Método dos Quadrantes.",
   other: {
     "codex-preview": "development",
