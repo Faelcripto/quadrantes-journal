@@ -6,5 +6,4 @@
 
 .annual-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding:20px}.annual-month{display:flex;flex-direction:column;text-align:left;gap:12px;padding:18px;background:#20242b;border:1px solid #343a43;border-radius:9px;cursor:pointer}.annual-month:hover{border-color:#f4a15d}.annual-month:focus-visible{outline:2px solid #f4a15d;outline-offset:2px}.annual-month.win{background:#192c28}.annual-month.loss{background:#302126}.annual-month strong{font-size:18px}.annual-month small{font-size:12px;color:#a7aeba}.toolbar .filter-group{flex-wrap:wrap}.toolbar{gap:12px;flex-wrap:wrap}@media(max-width:600px){.annual-grid{grid-template-columns:repeat(2,minmax(0,1fr));padding:14px}.annual-month{padding:13px}.annual-month strong{font-size:16px}}
 
-/* Identidade do Método dos Quadrantes */
-.brand{flex-direction:column;align-items:flex-start;gap:8px;padding:20px 24px 24px}.brand-logo{display:block;width:136px;height:72px;object-fit:cover;object-position:center 48%;border-radius:10px;background:#000}.brand>div{line-height:1.1}.brand span:not(.brand-icon){font-size:9px;letter-spacing:1.8px}
+.brand{font-size:21px;letter-spacing:-.6px;padding:26px 20px 30px}.brand>div{line-height:1.2}.brand span:not(.brand-icon){font-size:8px;letter-spacing:1.4px}
