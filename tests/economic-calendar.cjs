@@ -1,0 +1,17 @@
+const fs=require('fs'),ts=require(process.cwd()+'/node_modules/typescript'),vm=require('vm'),assert=require('assert');
+const moduleObject={exports:{}};
+const code=ts.transpileModule(fs.readFileSync('lib/economic-calendar.ts','utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS}}).outputText;
+vm.runInNewContext(code,{module:moduleObject,exports:moduleObject.exports,Date,Intl});
+const {brazilDay,calendarRange,filterEvents,eventStatus}=moduleObject.exports;
+assert.equal(brazilDay(Date.parse('2026-10-09T01:00:00Z')),'2026-10-08');
+assert.equal(calendarRange('2026-10-11','Esta semana').join(','),'2026-10-05,2026-10-11');
+assert.equal(calendarRange('2026-12-31','Próximos 14 dias')[1],'2027-01-13');
+const events=JSON.parse(fs.readFileSync('data/macro-weekly.json')).events;
+const week=filterEvents(events,'2026-10-08','Esta semana','EUR',false);
+assert(week.some(e=>e.id==='ecb-accounts-20261008'));
+const high=filterEvents(events,'2026-10-08','Próximos 14 dias','USD',true);
+assert.equal(high.length,2);
+assert(high.every(e=>e.impact==='Alto'));
+assert.equal(eventStatus(week[0],Date.parse('2026-10-09T00:00:00Z')),'Resultado não verificado');
+assert.equal(new Date('2026-10-14T12:30:00Z').toLocaleTimeString('pt-BR',{timeZone:'America/Sao_Paulo',hour:'2-digit',minute:'2-digit'}),'09:30');
+console.log('PASS: Brasília, week boundary, year boundary, currency/impact filters, unverified results');

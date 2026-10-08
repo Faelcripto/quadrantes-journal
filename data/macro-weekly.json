@@ -84,7 +84,28 @@
         "label": "BLS · agenda JOLTS",
         "url": "https://www.bls.gov/schedule/news_release/jolts.htm"
       },
-      "why": "Sinaliza demanda por trabalhadores e pode alterar a leitura sobre os juros do Fed."
+      "why": "Sinaliza demanda por trabalhadores e pode alterar a leitura sobre os juros do Fed.",
+      "impact": "Não classificado",
+      "assets": [],
+      "explanation": "Sinaliza demanda por trabalhadores e pode alterar a leitura sobre os juros do Fed.",
+      "favorable": "",
+      "unfavorable": "",
+      "caution": "Observe a reação na região do quadrante e espere a confirmação do seu setup.",
+      "previous": "",
+      "forecast": "",
+      "actual": "",
+      "previousSource": {
+        "label": "",
+        "url": ""
+      },
+      "forecastSource": {
+        "label": "",
+        "url": ""
+      },
+      "actualSource": {
+        "label": "",
+        "url": ""
+      }
     },
     {
       "id": "gdp-2026-q2-third",
@@ -96,7 +117,28 @@
         "label": "BEA · calendário oficial",
         "url": "https://www.bea.gov/news/schedule"
       },
-      "why": "Revisões de crescimento podem influenciar expectativas de juros e de atividade."
+      "why": "Revisões de crescimento podem influenciar expectativas de juros e de atividade.",
+      "impact": "Não classificado",
+      "assets": [],
+      "explanation": "Revisões de crescimento podem influenciar expectativas de juros e de atividade.",
+      "favorable": "",
+      "unfavorable": "",
+      "caution": "Observe a reação na região do quadrante e espere a confirmação do seu setup.",
+      "previous": "",
+      "forecast": "",
+      "actual": "",
+      "previousSource": {
+        "label": "",
+        "url": ""
+      },
+      "forecastSource": {
+        "label": "",
+        "url": ""
+      },
+      "actualSource": {
+        "label": "",
+        "url": ""
+      }
     },
     {
       "id": "pce-2026-08",
@@ -108,7 +150,28 @@
         "label": "BEA · calendário oficial",
         "url": "https://www.bea.gov/news/schedule"
       },
-      "why": "O PCE é uma referência central para o objetivo de inflação do Fed."
+      "why": "O PCE é uma referência central para o objetivo de inflação do Fed.",
+      "impact": "Não classificado",
+      "assets": [],
+      "explanation": "O PCE é uma referência central para o objetivo de inflação do Fed.",
+      "favorable": "",
+      "unfavorable": "",
+      "caution": "Observe a reação na região do quadrante e espere a confirmação do seu setup.",
+      "previous": "",
+      "forecast": "",
+      "actual": "",
+      "previousSource": {
+        "label": "",
+        "url": ""
+      },
+      "forecastSource": {
+        "label": "",
+        "url": ""
+      },
+      "actualSource": {
+        "label": "",
+        "url": ""
+      }
     },
     {
       "id": "hicp-2026-09-flash",
@@ -120,7 +183,28 @@
         "label": "Eurostat · próxima divulgação confirmada",
         "url": "https://ec.europa.eu/eurostat/web/products-euro-indicators/w/2-01092026-ap"
       },
-      "why": "Primeira leitura da inflação do mês, relevante para o cenário do BCE. Data confirmada; horário ainda não verificado nesta edição."
+      "why": "Primeira leitura da inflação do mês, relevante para o cenário do BCE. Data confirmada; horário ainda não verificado nesta edição.",
+      "impact": "Não classificado",
+      "assets": [],
+      "explanation": "Primeira leitura da inflação do mês, relevante para o cenário do BCE. Data confirmada; horário ainda não verificado nesta edição.",
+      "favorable": "",
+      "unfavorable": "",
+      "caution": "Observe a reação na região do quadrante e espere a confirmação do seu setup.",
+      "previous": "",
+      "forecast": "",
+      "actual": "",
+      "previousSource": {
+        "label": "",
+        "url": ""
+      },
+      "forecastSource": {
+        "label": "",
+        "url": ""
+      },
+      "actualSource": {
+        "label": "",
+        "url": ""
+      }
     },
     {
       "id": "payroll-2026-09",
@@ -132,7 +216,28 @@
         "label": "BLS · calendário de outubro",
         "url": "https://www.bls.gov/schedule/2026/10_sched.htm"
       },
-      "why": "Emprego, salários e revisões ajudam a avaliar atividade e pressão inflacionária."
+      "why": "Emprego, salários e revisões ajudam a avaliar atividade e pressão inflacionária.",
+      "impact": "Não classificado",
+      "assets": [],
+      "explanation": "Emprego, salários e revisões ajudam a avaliar atividade e pressão inflacionária.",
+      "favorable": "",
+      "unfavorable": "",
+      "caution": "Observe a reação na região do quadrante e espere a confirmação do seu setup.",
+      "previous": "",
+      "forecast": "",
+      "actual": "",
+      "previousSource": {
+        "label": "",
+        "url": ""
+      },
+      "forecastSource": {
+        "label": "",
+        "url": ""
+      },
+      "actualSource": {
+        "label": "",
+        "url": ""
+      }
     },
     {
       "id": "trade-2026-08",
@@ -144,7 +249,175 @@
         "label": "BEA · calendário oficial",
         "url": "https://www.bea.gov/news/schedule"
       },
-      "why": "Exportações e importações ajudam a acompanhar a demanda e a contribuição do comércio ao crescimento."
+      "why": "Exportações e importações ajudam a acompanhar a demanda e a contribuição do comércio ao crescimento.",
+      "impact": "Não classificado",
+      "assets": [],
+      "explanation": "Exportações e importações ajudam a acompanhar a demanda e a contribuição do comércio ao crescimento.",
+      "favorable": "",
+      "unfavorable": "",
+      "caution": "Observe a reação na região do quadrante e espere a confirmação do seu setup.",
+      "previous": "",
+      "forecast": "",
+      "actual": "",
+      "previousSource": {
+        "label": "",
+        "url": ""
+      },
+      "forecastSource": {
+        "label": "",
+        "url": ""
+      },
+      "actualSource": {
+        "label": "",
+        "url": ""
+      }
+    },
+    {
+      "id": "ecb-accounts-20261008",
+      "title": "Ata da reunião do BCE",
+      "currency": "EUR",
+      "date": "2026-10-08",
+      "at": "2026-10-08T11:30:00Z",
+      "source": {
+        "label": "BCE · agenda oficial de 8 de outubro",
+        "url": "https://www.ecb.europa.eu/press/calendars/weekly/html/index.en.html"
+      },
+      "why": "Ajuda a entender como os dirigentes avaliaram inflação, atividade e juros na reunião de setembro.",
+      "explanation": "É o relato das discussões da reunião anterior, não uma nova decisão sobre a taxa de juros.",
+      "favorable": "Se o texto indicar preocupação com inflação maior do que o mercado esperava, a expectativa de juros mais altos pode apoiar o euro. Com o dólar estável, isso pode favorecer o EUR/USD.",
+      "unfavorable": "Se a preocupação com crescimento fraco superar o esperado, a expectativa de juros menores pode pressionar o euro. A reação também depende das condições nos EUA.",
+      "impact": "Moderado",
+      "assets": [
+        "EUR/USD",
+        "EUR/GBP"
+      ],
+      "caution": "Marque suas regiões antes da divulgação. Observe se o preço sustenta ou rejeita o quadrante e aguarde a confirmação prevista no setup. A primeira reação pode se inverter.",
+      "previous": "",
+      "forecast": "",
+      "actual": "",
+      "previousSource": {
+        "label": "",
+        "url": ""
+      },
+      "forecastSource": {
+        "label": "",
+        "url": ""
+      },
+      "actualSource": {
+        "label": "",
+        "url": ""
+      }
+    },
+    {
+      "id": "claims-20261008",
+      "title": "Pedidos de seguro-desemprego dos EUA",
+      "currency": "USD",
+      "date": "2026-10-08",
+      "at": "2026-10-08T12:30:00Z",
+      "source": {
+        "label": "Departamento do Trabalho · calendário semanal",
+        "url": "https://oui.doleta.gov/unemploy/claims_arch.asp"
+      },
+      "why": "É uma leitura frequente das condições do emprego americano, que pode alterar expectativas sobre os juros.",
+      "explanation": "Conta novos pedidos de benefício; não é o mesmo indicador que o número de empregos criados no payroll.",
+      "favorable": "Pedidos abaixo do consenso podem sugerir emprego mais firme e apoiar o dólar se o mercado interpretar que os juros ficarão elevados por mais tempo. Isso pode pressionar o EUR/USD.",
+      "unfavorable": "Pedidos acima do consenso podem sinalizar enfraquecimento do emprego e pesar sobre o dólar. Em momentos de aversão ao risco, a busca por segurança pode mudar essa reação.",
+      "impact": "Moderado",
+      "assets": [
+        "EUR/USD",
+        "USD/JPY",
+        "XAU/USD"
+      ],
+      "caution": "Marque suas regiões antes da divulgação. Observe se o preço sustenta ou rejeita o quadrante e aguarde a confirmação prevista no setup. A primeira reação pode se inverter.",
+      "previous": "",
+      "forecast": "",
+      "actual": "",
+      "previousSource": {
+        "label": "",
+        "url": ""
+      },
+      "forecastSource": {
+        "label": "",
+        "url": ""
+      },
+      "actualSource": {
+        "label": "",
+        "url": ""
+      }
+    },
+    {
+      "id": "cpi-20261014",
+      "title": "Inflação dos EUA · CPI de setembro",
+      "currency": "USD",
+      "date": "2026-10-14",
+      "at": "2026-10-14T12:30:00Z",
+      "source": {
+        "label": "BLS · calendário oficial de outubro",
+        "url": "https://www.bls.gov/schedule/2026/10_sched_list.htm"
+      },
+      "why": "Pode alterar as expectativas para os juros do Federal Reserve.",
+      "explanation": "Mede a variação de preços de uma cesta de bens e serviços comprados pelos consumidores.",
+      "favorable": "Inflação acima do consenso pode elevar a expectativa de juros e apoiar o dólar. Se os juros reais subirem, o ouro também pode sofrer pressão; a reação não é automática.",
+      "unfavorable": "Inflação abaixo do consenso pode reduzir a expectativa de juros e pressionar o dólar, o que pode favorecer o EUR/USD e o ouro se os outros fatores não mudarem.",
+      "impact": "Alto",
+      "assets": [
+        "EUR/USD",
+        "USD/JPY",
+        "XAU/USD"
+      ],
+      "caution": "Marque suas regiões antes da divulgação. Observe se o preço sustenta ou rejeita o quadrante e aguarde a confirmação prevista no setup. A primeira reação pode se inverter.",
+      "previous": "",
+      "forecast": "",
+      "actual": "",
+      "previousSource": {
+        "label": "",
+        "url": ""
+      },
+      "forecastSource": {
+        "label": "",
+        "url": ""
+      },
+      "actualSource": {
+        "label": "",
+        "url": ""
+      }
+    },
+    {
+      "id": "ppi-20261015",
+      "title": "Inflação ao produtor dos EUA · PPI",
+      "currency": "USD",
+      "date": "2026-10-15",
+      "at": "2026-10-15T12:30:00Z",
+      "source": {
+        "label": "BLS · calendário oficial de outubro",
+        "url": "https://www.bls.gov/schedule/2026/10_sched_list.htm"
+      },
+      "why": "Ajuda a avaliar pressões de preços na produção e a leitura de inflação.",
+      "explanation": "Acompanha preços recebidos pelos produtores americanos; não é o mesmo índice de preços ao consumidor.",
+      "favorable": "Uma surpresa de alta pode apoiar o dólar se reforçar a expectativa de juros mais altos. Os componentes e as revisões importam.",
+      "unfavorable": "Uma surpresa de baixa pode pressionar o dólar se reduzir a expectativa de juros. Nem toda queda nos preços ao produtor chega ao consumidor.",
+      "impact": "Alto",
+      "assets": [
+        "EUR/USD",
+        "USD/JPY",
+        "XAU/USD"
+      ],
+      "caution": "Marque suas regiões antes da divulgação. Observe se o preço sustenta ou rejeita o quadrante e aguarde a confirmação prevista no setup. A primeira reação pode se inverter.",
+      "previous": "",
+      "forecast": "",
+      "actual": "",
+      "previousSource": {
+        "label": "",
+        "url": ""
+      },
+      "forecastSource": {
+        "label": "",
+        "url": ""
+      },
+      "actualSource": {
+        "label": "",
+        "url": ""
+      }
     }
   ],
   "notes": [
@@ -152,5 +425,6 @@
     "Seleção de eventos relevantes para dólar e euro; não é uma agenda mundial completa.",
     "Horários em Brasília. Quando não confirmado, o horário aparece explicitamente como pendente.",
     "Análise de contexto para estudo, sem indicação de compra ou venda."
-  ]
+  ],
+  "calendarUpdatedAt": "2026-10-08T19:50:00Z"
 }
