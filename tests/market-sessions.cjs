@@ -1,0 +1,25 @@
+const assert=require('node:assert/strict'),ts=require('typescript'),fs=require('node:fs');
+const mod={exports:{}};new Function('exports','require','module',ts.transpileModule(fs.readFileSync('lib/market-sessions.ts','utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2020}}).outputText)(mod.exports,require,mod);
+const {localUtc,sessionSchedule}=mod.exports;
+const at=s=>sessionSchedule(Date.parse(s));
+assert.equal(new Date(localUtc(2026,1,12,8,'America/New_York')).toISOString(),'2026-01-12T13:00:00.000Z');
+assert.equal(new Date(localUtc(2026,7,13,8,'America/New_York')).toISOString(),'2026-07-13T12:00:00.000Z');
+assert.equal(new Date(localUtc(2026,10,9,8,'Australia/Sydney')).toISOString(),'2026-10-08T21:00:00.000Z');
+assert.equal(new Date(localUtc(2026,7,13,8,'Australia/Sydney')).toISOString(),'2026-07-12T22:00:00.000Z');
+assert.equal(at('2026-10-09T02:51:00Z').active.some(w=>w.session.id==='tokyo'),true);
+assert.equal(at('2026-10-09T02:51:00Z').assets.includes('USD/JPY'),true);
+assert.deepEqual(at('2026-10-08T14:00:00Z').active.map(w=>w.session.id).sort(),['london','newyork']);
+assert.equal(at('2026-10-08T16:00:00Z').active.some(w=>w.session.id==='london'),false);
+assert.equal(at('2026-10-09T20:59:00Z').marketOpen,true);
+assert.equal(at('2026-10-09T21:00:00Z').marketOpen,false);
+assert.equal(at('2026-10-10T10:00:00Z').assets.length,0);
+assert.equal(at('2026-10-11T20:59:00Z').active.length,0);
+assert.equal(at('2026-10-11T21:00:00Z').marketOpen,true);
+assert.equal(at('2026-11-08T21:00:00Z').marketOpen,false);
+assert.equal(at('2026-11-08T22:00:00Z').marketOpen,true);
+// US summer time starts before the UK: London opens at 08 UTC, New York at 12 UTC.
+assert.equal(at('2026-03-16T07:59:00Z').active.some(w=>w.session.id==='london'),false);
+assert.equal(at('2026-03-16T08:00:00Z').active.some(w=>w.session.id==='london'),true);
+assert.equal(at('2026-03-16T12:00:00Z').active.some(w=>w.session.id==='newyork'),true);
+for(const stamp of ['2026-10-09T21:00:00Z','2026-12-31T23:59:00Z'])assert.ok(at(stamp).next.at>Date.parse(stamp));
+console.log('PASS: regional DST, Asia, overlap, closing boundaries, weekend, reopening, year rollover');
