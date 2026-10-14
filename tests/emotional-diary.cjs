@@ -1,0 +1,30 @@
+const assert=require('node:assert/strict'),fs=require('node:fs'),ts=require('typescript');
+function read(file,requireFn=require){const m={exports:{}};new Function('exports','require','module',ts.transpileModule(fs.readFileSync(file,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2020}}).outputText)(m.exports,requireFn,m);return m.exports;}
+const schemas=read('lib/emotional-diary.ts');
+const input={id:'7b9f7f00-1af2-4e3a-b47d-75d683739080',entry_date:'2026-10-14',title:'Meu dia',body:'Respeitei o plano.',emotion:'Calmo'};
+assert.equal(schemas.diaryEntrySchema.safeParse(input).success,true);
+for(const change of [{entry_date:'2026-02-30'},{body:'   '},{body:'a'.repeat(10001)},{emotion:'Outra'},{user_id:'spoof'}])assert.equal(schemas.diaryEntrySchema.safeParse({...input,...change}).success,false);
+assert.equal(schemas.diaryEditSchema.safeParse({...input,revision:0}).success,false);
+let user=null,calls=[],result={data:null,error:null};
+const chain=new Proxy({},{get:(_,key)=>{if(key==='then')return resolve=>Promise.resolve(result).then(resolve);return(...args)=>{calls.push([key,...args]);return chain}}});
+const db={auth:{getUser:async()=>({data:{user}})},from:(name)=>{calls.push(['from',name]);return chain}};
+const api=read('app/api/emotional-diary/route.ts',name=>name==='@/lib/supabase/server'?{createClient:async()=>db}:name==='@/lib/emotional-diary'?schemas:require(name));
+const req=(method,body,origin='https://journal.test')=>new Request('https://journal.test/api/emotional-diary',{method,headers:{origin,'Content-Type':'application/json'},...(body?{body:JSON.stringify(body)}:{})});
+(async()=>{
+ assert.equal((await api.GET(req('GET'))).status,401);
+ assert.equal((await api.POST(req('POST',input))).status,401);
+ user={id:'owner-from-session'};
+ assert.equal((await api.POST(req('POST',input,'https://foreign.test'))).status,403);
+ assert.equal((await api.POST(req('POST',{...input,user_id:'spoof'}))).status,400);
+ calls=[];result={data:{...input,revision:1},error:null};
+ assert.equal((await api.POST(req('POST',input))).status,201);
+ assert.equal(calls.find(c=>c[0]==='insert')[1].user_id,user.id);
+ calls=[];result={data:null,error:null};
+ assert.equal((await api.PATCH(req('PATCH',{...input,revision:1}))).status,409);
+ assert.ok(calls.some(c=>c[0]==='eq'&&c[1]==='user_id'&&c[2]===user.id));
+ assert.ok(calls.some(c=>c[0]==='eq'&&c[1]==='revision'&&c[2]===1));
+ calls=[];assert.equal((await api.DELETE(req('DELETE',{id:input.id,revision:1}))).status,409);
+ assert.ok(calls.some(c=>c[0]==='eq'&&c[1]==='user_id'&&c[2]===user.id));
+ result={data:[],error:null};calls=[];const list=await api.GET(req('GET'));assert.equal(list.status,200);assert.equal(list.headers.get('Cache-Control'),'private, no-store');assert.ok(calls.some(c=>c[0]==='eq'&&c[1]==='user_id'&&c[2]===user.id));
+ console.log('PASS: validation, authentication, origin, session ownership, revision conflicts, private cache');
+})().catch(e=>{console.error(e);process.exitCode=1});
