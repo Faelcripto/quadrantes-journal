@@ -1,4 +1,5 @@
 import 'server-only';
+import {normalizeCourse} from './course-progress';
 import { createClient } from './supabase/server';
 import {contentKeys,contentSchemas,defaultContent,type SiteContent} from './site-content';
 export async function isSiteAdmin(supabase:Awaited<ReturnType<typeof createClient>>,id:string){
@@ -19,5 +20,6 @@ export async function readSiteContent(supabase:Awaited<ReturnType<typeof createC
   if(!parsed.success) throw Error('Conteúdo inválido: '+key);
   Object.assign(content,{[key]:parsed.data});revisions[key]=row.revision;
  }
+ content.course=normalizeCourse(content.course);
  return {content,revisions};
 }

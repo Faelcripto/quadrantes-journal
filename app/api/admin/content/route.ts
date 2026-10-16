@@ -15,6 +15,7 @@ export async function PUT(req:Request){
   if(!contentKeys.includes(body.key)||!Number.isInteger(body.revision)||body.revision<0)return reply({error:'Seção ou versão inválida.'},400);
   const key=body.key as ContentKey,parsed=contentSchemas[key].safeParse(body.payload);
   if(!parsed.success)return reply({error:parsed.error.issues.map(i=>i.path.join(' → ')+': '+i.message).join('\n')},400);
+  if(key==='course'&&!(parsed.data as import('@/lib/site-content').SiteContent['course']).modules.every(m=>m.lessons.every(l=>!!l.id)))return reply({error:'Recarregue o painel antes de publicar para preservar os identificadores das aulas.'},409);
   const record={key,payload:parsed.data,revision:body.revision+1,updated_at:new Date().toISOString()};
   const result=body.revision===0?await supabase.from('site_content').insert(record).select('revision').single():await supabase.from('site_content').update(record).eq('key',key).eq('revision',body.revision).select('revision').maybeSingle();
   if(result.error?.code==='23505'||(!result.error&&!result.data))return reply({error:'Esta seção foi alterada em outra aba. Recarregue antes de editar novamente.'},409);
