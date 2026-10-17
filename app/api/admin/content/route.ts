@@ -16,6 +16,11 @@ export async function PUT(req:Request){
   const key=body.key as ContentKey,parsed=contentSchemas[key].safeParse(body.payload);
   if(!parsed.success)return reply({error:parsed.error.issues.map(i=>i.path.join(' → ')+': '+i.message).join('\n')},400);
   if(key==='course'&&!(parsed.data as import('@/lib/site-content').SiteContent['course']).modules.every(m=>m.lessons.every(l=>!!l.id)))return reply({error:'Recarregue o painel antes de publicar para preservar os identificadores das aulas.'},409);
+  if(key==='radar'){
+   const old=await supabase.from('site_content').select('payload').eq('key','radar').maybeSingle();if(old.error)throw old.error;
+   const next=parsed.data as import('@/lib/site-content').SiteContent['radar'];
+   next.cards=next.cards.map(card=>{const previous=old.data?.payload?.cards?.find((c:{id:string})=>c.id===card.id);const {lastEdited:ignored,...fields}=card;const {lastEdited:stamp,...before}=previous||{};return {...fields,lastEdited:JSON.stringify(fields)===JSON.stringify(before)&&stamp?stamp:new Date().toISOString()}});
+  }
   const record={key,payload:parsed.data,revision:body.revision+1,updated_at:new Date().toISOString()};
   const result=body.revision===0?await supabase.from('site_content').insert(record).select('revision').single():await supabase.from('site_content').update(record).eq('key',key).eq('revision',body.revision).select('revision').maybeSingle();
   if(result.error?.code==='23505'||(!result.error&&!result.data))return reply({error:'Esta seção foi alterada em outra aba. Recarregue antes de editar novamente.'},409);

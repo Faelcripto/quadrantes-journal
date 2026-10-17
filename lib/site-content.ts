@@ -11,6 +11,7 @@ const source = z.object({label:title,url:link});
 const optionalSource=z.object({label:z.string().max(180),url:optionalLink}).refine(s=>(!s.label&&!s.url)||!!(s.label&&s.url),'Informe nome e link da fonte.').default({label:'',url:''});
 const currency = z.enum(['USD','EUR']);
 export const contentSchemas = {
+ radar:z.object({cards:z.array(z.object({id:title,asset:title,timeframe:z.enum(['M5','M15','M30','H1','H4','D1','W1']),setup:z.enum(['Correção','Reversão','Continuação']),date,imageUrl:optionalLink,watch:title,invalidation:title,radarStatus:z.enum(['Em observação','Confirmado','Invalidado','Encerrado']),lastEdited:instant.optional()})).max(200).refine(cards=>new Set(cards.map(c=>c.id)).size===cards.length,'Identificadores duplicados.') }),
  appearance: z.object({name:title,tagline:title,headline:title,description:text,background:z.enum(['black','graphite']),accent:z.enum(['orange','gold','mint'])}),
  strategies: z.object({items:z.array(z.object({name:z.enum(['Correção','Reversão','Continuação']),rules:text})).length(3).refine(items => new Set(items.map(i=>i.name)).size===3,'Mantenha as três estratégias.') }),
  course:z.object({title,description:text,status:title,about:text,modules:z.array(z.object({title,description:text,lessons:z.array(z.object({id:z.string().min(1).max(100).optional(),title,videoUrl:optionalLink,materialUrl:optionalLink})).max(50)})).max(30)}).refine(c=>{const ids=c.modules.flatMap(m=>m.lessons.map(l=>l.id).filter(Boolean));return new Set(ids).size===ids.length},'Cada aula precisa de um identificador exclusivo.'),
@@ -19,6 +20,7 @@ export const contentSchemas = {
 export type ContentKey=keyof typeof contentSchemas;
 export type SiteContent={ [K in ContentKey]:z.infer<(typeof contentSchemas)[K]> };
 export const defaultContent:SiteContent={
+ radar:{cards:[]},
  appearance:{name:'Diário de Trader',tagline:'MÉTODO DOS QUADRANTES',headline:'Seu processo. Sua evolução.',description:'Registre suas operações, entenda suas decisões e acompanhe sua consistência.',background:'black',accent:'orange'},
  strategies:contentSchemas.strategies.parse({items:quadrantesStrategies}),
  course:{title:'Aprenda a ler o mercado.',description:'Gerenciamento, disciplina e técnica na aplicação do Método dos Quadrantes.',status:'Em preparação',about:'Esta área reunirá as aulas do Método dos Quadrantes. Os vídeos e materiais ainda estão em preparação.',modules:([
