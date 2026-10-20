@@ -11,6 +11,7 @@ const source = z.object({label:title,url:link});
 const optionalSource=z.object({label:z.string().max(180),url:optionalLink}).refine(s=>(!s.label&&!s.url)||!!(s.label&&s.url),'Informe nome e link da fonte.').default({label:'',url:''});
 const currency = z.enum(['USD','EUR']);
 export const contentSchemas = {
+ live:z.object({title,description:text,url:optionalLink,liveStatus:z.enum(['Offline','Ao vivo']),endsAt:z.union([z.literal(''),instant])}).refine(v=>v.liveStatus!=='Ao vivo'||!!(v.url&&v.endsAt),'Para entrar ao vivo, informe o link e o horário de encerramento.'),
  radar:z.object({cards:z.array(z.object({id:title,asset:title,timeframe:z.enum(['M5','M15','M30','H1','H4','D1','W1']),setup:z.enum(['Correção','Reversão','Continuação']),date,imageUrl:optionalLink,watch:title,invalidation:title,radarStatus:z.enum(['Em observação','Confirmado','Invalidado','Encerrado']),lastEdited:instant.optional()})).max(200).refine(cards=>new Set(cards.map(c=>c.id)).size===cards.length,'Identificadores duplicados.') }),
  appearance: z.object({name:title,tagline:title,headline:title,description:text,background:z.enum(['black','graphite']),accent:z.enum(['orange','gold','mint'])}),
  strategies: z.object({items:z.array(z.object({name:z.enum(['Correção','Reversão','Continuação']),rules:text})).length(3).refine(items => new Set(items.map(i=>i.name)).size===3,'Mantenha as três estratégias.') }),
@@ -20,6 +21,7 @@ export const contentSchemas = {
 export type ContentKey=keyof typeof contentSchemas;
 export type SiteContent={ [K in ContentKey]:z.infer<(typeof contentSchemas)[K]> };
 export const defaultContent:SiteContent={
+ live:{title:'Ao vivo com Fael Cripto',description:'Análises e estudos do Método dos Quadrantes.',url:'',liveStatus:'Offline',endsAt:''},
  radar:{cards:[]},
  appearance:{name:'Diário de Trader',tagline:'MÉTODO DOS QUADRANTES',headline:'Seu processo. Sua evolução.',description:'Registre suas operações, entenda suas decisões e acompanhe sua consistência.',background:'black',accent:'orange'},
  strategies:contentSchemas.strategies.parse({items:quadrantesStrategies}),

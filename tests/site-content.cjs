@@ -14,3 +14,7 @@ assert(!s.radar.safeParse({cards:[card,card]}).success);
 assert(!s.radar.safeParse({cards:[{...card,radarStatus:'Comprar'}]}).success);
 assert(!s.radar.safeParse({cards:[{...card,watch:''}]}).success);
 console.log('PASS: radar content, unsafe image links, duplicate IDs, status and required analysis');
+assert(!s.live.safeParse({...d.live,liveStatus:'Ao vivo'}).success);
+assert(s.live.safeParse({...d.live,liveStatus:'Ao vivo',url:'https://www.youtube.com/watch?v=example',endsAt:'2026-10-21T02:00:00Z'}).success);
+assert(!s.live.safeParse({...d.live,url:'javascript:alert(1)'}).success);
+console.log('PASS: live requires safe URL and expiry');
