@@ -1,56 +1,56 @@
 {
-  "updatedAt": "2026-10-16T23:39:01.566852+00:00",
-  "weekStart": "2026-10-10",
-  "weekEnd": "2026-10-16",
-  "heading": "Inflação em foco antes das decisões de Fed e BCE",
-  "summary": "Edição de 10 a 16/10: inflação ao consumidor e ao produtor sobe nos EUA; a zona do euro confirma inflação anual de 3,8%. A agenda até 30/10 concentra decisões de juros e dados de crescimento. Fatos e cenários estão separados; não há sinais de entrada.",
+  "updatedAt": "2026-10-23T23:34:56.000Z",
+  "weekStart": "2026-10-17",
+  "weekEnd": "2026-10-23",
+  "heading": "Semana de bancos centrais: Fed e BCE no centro do radar",
+  "summary": "Edição de 17 a 23/10: os pedidos iniciais de seguro-desemprego recuaram nos EUA, enquanto a zona do euro divulgou crescimento na construção e novas leituras fiscais. A agenda até 06/11 concentra decisões de Fed e BCE, PIB, PCE e payroll. Fatos e interpretação estão separados; os cenários não são sinais de entrada.",
   "news": [
     {
-      "id": "cpi-20261014",
-      "date": "2026-10-14",
-      "tag": "USD · INFLAÇÃO",
-      "title": "CPI americano sobe 0,6% em setembro",
-      "summary": "O BLS divulgou alta mensal de 0,6% e de 3,7% em 12 meses. O núcleo, sem alimentos e energia, subiu 0,3% no mês. São dados de setembro divulgados em outubro.",
-      "watch": "Inflação persistente pode sustentar expectativas de juros elevados; observe a reação dos rendimentos e do dólar.",
+      "id": "construction-eur-20261020",
+      "date": "2026-10-20",
+      "tag": "EUR · ATIVIDADE",
+      "title": "Construção cresce 1,8% na zona do euro",
+      "summary": "A produção na construção avançou 1,8% em agosto ante julho e 1,4% ante agosto de 2025, em dados ajustados divulgados pela Eurostat.",
+      "watch": "É um sinal positivo de atividade, mas um único setor não define sozinho a trajetória do euro ou a decisão do BCE.",
       "source": {
-        "label": "BLS · CPI de setembro, divulgado em 14/10",
-        "url": "https://www.bls.gov/news.release/cpi.nr0.htm"
+        "label": "Eurostat · produção na construção, 20/10",
+        "url": "https://ec.europa.eu/eurostat/en/web/products-euro-indicators/w/4-20102026-ap"
       }
     },
     {
-      "id": "ppi-20261015",
-      "date": "2026-10-15",
-      "tag": "USD · PRODUÇÃO",
-      "title": "Preços ao produtor avançam 1,3%",
-      "summary": "O PPI de demanda final subiu 1,3% em setembro. Os preços dos bens avançaram 2,6% e os de serviços, 0,8%, segundo o BLS.",
-      "watch": "O PPI ajuda a avaliar pressões de custos, mas não equivale ao CPI ou ao PCE.",
+      "id": "debt-eur-2026q2",
+      "date": "2026-10-21",
+      "tag": "EUR · FISCAL",
+      "title": "Dívida pública chega a 88,8% do PIB na zona do euro",
+      "summary": "A dívida bruta dos governos ficou em 88,8% do PIB no segundo trimestre de 2026, ante 88,4% no trimestre anterior, segundo a Eurostat.",
+      "watch": "Dívida maior pode elevar a sensibilidade a juros e risco fiscal. O efeito no euro depende do país, do crescimento e da percepção do mercado.",
       "source": {
-        "label": "BLS · PPI de setembro, divulgado em 15/10",
-        "url": "https://www.bls.gov/news.release/ppi.nr0.htm"
+        "label": "Eurostat · dívida pública do 2º trimestre, 21/10",
+        "url": "https://ec.europa.eu/eurostat/web/products-euro-indicators/w/2-21102026-bp"
       }
     },
     {
-      "id": "hicp-20261016",
-      "date": "2026-10-16",
-      "tag": "EUR · INFLAÇÃO",
-      "title": "Zona do euro confirma inflação anual de 3,8%",
-      "summary": "A Eurostat confirmou 3,8% em setembro, ante 3,2% em agosto. Energia e serviços foram as maiores contribuições à taxa anual.",
-      "watch": "A próxima decisão do BCE será em 29/10. Inflação elevada pode pesar na decisão, sem garantir uma alta dos juros.",
+      "id": "deficit-eur-2026q2",
+      "date": "2026-10-21",
+      "tag": "EUR · FISCAL",
+      "title": "Déficit trimestral da zona do euro fica em 3,3% do PIB",
+      "summary": "O déficit público ajustado sazonalmente ficou em 3,3% do PIB no segundo trimestre, após 3,2% no primeiro trimestre de 2026.",
+      "watch": "A leitura ajuda a compor o cenário fiscal, mas não deve ser tratada como gatilho isolado para EUR/USD.",
       "source": {
-        "label": "Eurostat · inflação de setembro, 16/10",
-        "url": "https://ec.europa.eu/eurostat/en/web/products-euro-indicators/w/2-16102026-ap"
+        "label": "Eurostat · déficit público do 2º trimestre, 21/10",
+        "url": "https://ec.europa.eu/eurostat/web/products-euro-indicators/w/2-21102026-cp"
       }
     },
     {
-      "id": "ip-20261016",
-      "date": "2026-10-16",
-      "tag": "USD · ATIVIDADE",
-      "title": "Produção industrial americana cresce 0,7%",
-      "summary": "O Federal Reserve divulgou avanço mensal de 0,7% da produção industrial em setembro. A utilização da capacidade passou a 76,9%.",
-      "watch": "Atividade mais firme pode sustentar o dólar se mudar as expectativas de juros; o resultado isolado não determina a direção.",
+      "id": "claims-20261022",
+      "date": "2026-10-22",
+      "tag": "USD · EMPREGO",
+      "title": "Pedidos iniciais recuam para 194 mil",
+      "summary": "Na semana encerrada em 17/10, os pedidos iniciais ajustados caíram 6 mil, para 194 mil. Os pedidos continuados subiram para 1,728 milhão na semana encerrada em 10/10.",
+      "watch": "Menos pedidos iniciais sugerem poucas demissões, mas o avanço dos continuados pede cautela. Observe como juros e dólar reagem ao conjunto, não apenas ao número principal.",
       "source": {
-        "label": "Federal Reserve · produção industrial, 16/10",
-        "url": "https://www.federalreserve.gov/releases/g17/Current/"
+        "label": "Departamento do Trabalho dos EUA · relatório de 22/10",
+        "url": "https://www.dol.gov/ui/data.pdf"
       }
     }
   ],
@@ -60,20 +60,16 @@
       "rate": "3,75%–4,00%",
       "rateLabel": "Faixa dos Fed funds",
       "asOf": "2026-09-16",
-      "facts": "O Fed fixou a faixa em 3,75%–4,00% em 16/09. Nesta semana, o CPI de setembro mostrou alta mensal de 0,6% e anual de 3,7%; o PPI subiu 1,3% no mês.",
-      "interpretation": "A pressão de preços pode apoiar o dólar se levar o mercado a esperar juros mais altos por mais tempo. Isso pode pressionar EUR/USD e ouro, mas depende do que já está nos preços e da reação dos juros reais.",
+      "facts": "O Fed fixou a faixa em 3,75%–4,00% em 16/09. Em 22/10, o Departamento do Trabalho informou 194 mil pedidos iniciais na semana encerrada em 17/10, 6 mil abaixo da semana anterior revisada; os pedidos continuados subiram para 1,728 milhão.",
+      "interpretation": "A queda dos pedidos iniciais pode apoiar o dólar se reforçar a percepção de emprego firme. A alta dos pedidos continuados aponta uma leitura menos uniforme. A decisão do Fed em 28/10 tende a ser o evento principal.",
       "sources": [
         {
           "label": "Federal Reserve · decisão de 16 set",
           "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm"
         },
         {
-          "label": "BLS · CPI de setembro, divulgado em 14/10",
-          "url": "https://www.bls.gov/news.release/cpi.nr0.htm"
-        },
-        {
-          "label": "BLS · PPI de setembro, divulgado em 15/10",
-          "url": "https://www.bls.gov/news.release/ppi.nr0.htm"
+          "label": "Departamento do Trabalho dos EUA · relatório de 22/10",
+          "url": "https://www.dol.gov/ui/data.pdf"
         }
       ]
     },
@@ -82,21 +78,25 @@
       "rate": "2,50%",
       "rateLabel": "Taxa de depósito do BCE",
       "asOf": "2026-09-16",
-      "facts": "A taxa de depósito do BCE está em 2,50%, vigente desde 16/09. Em 16/10, a Eurostat confirmou inflação anual de 3,8% em setembro.",
-      "interpretation": "Inflação persistente pode apoiar o euro se elevar as expectativas de juros do BCE. Energia cara também pode prejudicar o crescimento. Para EUR/USD, importa como essa leitura se compara à dos EUA.",
+      "facts": "A taxa de depósito do BCE está em 2,50%, vigente desde 16/09. Nesta semana, a Eurostat informou alta mensal de 1,8% na construção em agosto, dívida pública de 88,8% do PIB e déficit trimestral de 3,3% do PIB no segundo trimestre.",
+      "interpretation": "A atividade na construção oferece um sinal positivo, enquanto a dívida e o déficit mantêm o risco fiscal no radar. O euro pode ganhar apoio se o BCE soar mais restritivo que o esperado em 29/10; uma comunicação mais branda pode pressioná-lo.",
       "sources": [
         {
           "label": "BCE · decisão de 10 set",
           "url": "https://www.ecb.europa.eu/press/pr/date/2026/html/ecb.mp260910~314e508016.en.html"
         },
         {
-          "label": "Eurostat · inflação de setembro, 16/10",
-          "url": "https://ec.europa.eu/eurostat/en/web/products-euro-indicators/w/2-16102026-ap"
+          "label": "Eurostat · produção na construção, 20/10",
+          "url": "https://ec.europa.eu/eurostat/en/web/products-euro-indicators/w/4-20102026-ap"
+        },
+        {
+          "label": "Eurostat · dívida e déficit do 2º trimestre, 21/10",
+          "url": "https://ec.europa.eu/eurostat/news/euro-indicators"
         }
       ]
     }
   ],
-  "comparison": "Fatos: a inflação anual de setembro foi de 3,7% no CPI dos EUA e 3,8% no HICP da zona do euro; os índices têm metodologias diferentes. Interpretação: inflação alta dos dois lados não define sozinha o EUR/USD. Se a expectativa de aperto do Fed aumentar mais que a do BCE, o dólar pode se favorecer; no cenário inverso, o euro pode ganhar apoio. As decisões de 28 e 29/10 serão relevantes.",
+  "comparison": "Fatos: nos EUA, os pedidos iniciais de seguro-desemprego recuaram para 194 mil, mas os continuados subiram; na zona do euro, a construção avançou e as leituras fiscais mostraram dívida de 88,8% e déficit trimestral de 3,3% do PIB. Interpretação: os dados não oferecem uma vantagem automática para USD ou EUR. A direção de EUR/USD tende a depender principalmente de qual banco central — Fed em 28/10 ou BCE em 29/10 — surpreender mais na decisão e na comunicação.",
   "events": [
     {
       "id": "jolts-2026-08",
@@ -450,8 +450,8 @@
       "date": "2026-10-22",
       "at": "2026-10-22T12:30:00Z",
       "source": {
-        "label": "DOL · calendário semanal (8h30 no leste dos EUA)",
-        "url": "https://oui.doleta.gov/unemploy/claims_arch.asp"
+        "label": "Departamento do Trabalho dos EUA · relatório de 22/10, 8h30 Eastern",
+        "url": "https://www.dol.gov/ui/data.pdf"
       },
       "impact": "Moderado",
       "assets": [
@@ -464,57 +464,20 @@
       "favorable": "Pedidos menores que o esperado podem apoiar o dólar se indicarem emprego mais firme.",
       "unfavorable": "Pedidos maiores que o esperado podem pressionar o dólar se aumentarem a expectativa de juros menores.",
       "caution": "Cenários condicionais, não sinais. A primeira reação pode se inverter. Aguarde a confirmação do seu setup.",
-      "previous": "",
+      "previous": "200 mil (revisado)",
       "forecast": "",
-      "actual": "",
+      "actual": "194 mil",
       "previousSource": {
-        "label": "",
-        "url": ""
+        "label": "Departamento do Trabalho dos EUA · relatório de 22/10",
+        "url": "https://www.dol.gov/ui/data.pdf"
       },
       "forecastSource": {
         "label": "",
         "url": ""
       },
       "actualSource": {
-        "label": "",
-        "url": ""
-      }
-    },
-    {
-      "id": "claims-2026-10-29",
-      "title": "Pedidos de seguro-desemprego dos EUA",
-      "currency": "USD",
-      "date": "2026-10-29",
-      "at": "2026-10-29T12:30:00Z",
-      "source": {
-        "label": "DOL · calendário semanal (8h30 no leste dos EUA)",
-        "url": "https://oui.doleta.gov/unemploy/claims_arch.asp"
-      },
-      "impact": "Moderado",
-      "assets": [
-        "EUR/USD",
-        "USD/JPY",
-        "XAU/USD"
-      ],
-      "why": "Conta novos pedidos de benefício e ajuda a avaliar o emprego.",
-      "explanation": "Conta novos pedidos de benefício e ajuda a avaliar o emprego.",
-      "favorable": "Pedidos menores que o esperado podem apoiar o dólar se indicarem emprego mais firme.",
-      "unfavorable": "Pedidos maiores que o esperado podem pressionar o dólar se aumentarem a expectativa de juros menores.",
-      "caution": "Cenários condicionais, não sinais. A primeira reação pode se inverter. Aguarde a confirmação do seu setup.",
-      "previous": "",
-      "forecast": "",
-      "actual": "",
-      "previousSource": {
-        "label": "",
-        "url": ""
-      },
-      "forecastSource": {
-        "label": "",
-        "url": ""
-      },
-      "actualSource": {
-        "label": "",
-        "url": ""
+        "label": "Departamento do Trabalho dos EUA · relatório de 22/10",
+        "url": "https://www.dol.gov/ui/data.pdf"
       }
     },
     {
@@ -574,6 +537,43 @@
       "explanation": "A decisão e a comunicação orientam expectativas para os juros americanos.",
       "favorable": "Uma postura mais restritiva que a esperada pode apoiar o dólar e pressionar EUR/USD.",
       "unfavorable": "Uma postura mais branda que a esperada pode pressionar o dólar e favorecer EUR/USD.",
+      "caution": "Cenários condicionais, não sinais. A primeira reação pode se inverter. Aguarde a confirmação do seu setup.",
+      "previous": "",
+      "forecast": "",
+      "actual": "",
+      "previousSource": {
+        "label": "",
+        "url": ""
+      },
+      "forecastSource": {
+        "label": "",
+        "url": ""
+      },
+      "actualSource": {
+        "label": "",
+        "url": ""
+      }
+    },
+    {
+      "id": "claims-2026-10-29",
+      "title": "Pedidos de seguro-desemprego dos EUA",
+      "currency": "USD",
+      "date": "2026-10-29",
+      "at": "2026-10-29T12:30:00Z",
+      "source": {
+        "label": "DOL · calendário semanal (8h30 no leste dos EUA)",
+        "url": "https://oui.doleta.gov/unemploy/claims_arch.asp"
+      },
+      "impact": "Moderado",
+      "assets": [
+        "EUR/USD",
+        "USD/JPY",
+        "XAU/USD"
+      ],
+      "why": "Conta novos pedidos de benefício e ajuda a avaliar o emprego.",
+      "explanation": "Conta novos pedidos de benefício e ajuda a avaliar o emprego.",
+      "favorable": "Pedidos menores que o esperado podem apoiar o dólar se indicarem emprego mais firme.",
+      "unfavorable": "Pedidos maiores que o esperado podem pressionar o dólar se aumentarem a expectativa de juros menores.",
       "caution": "Cenários condicionais, não sinais. A primeira reação pode se inverter. Aguarde a confirmação do seu setup.",
       "previous": "",
       "forecast": "",
@@ -738,6 +738,78 @@
       }
     },
     {
+      "id": "gdp-eur-2026q3",
+      "title": "PIB da zona do euro · prévia do 3º trimestre",
+      "currency": "EUR",
+      "date": "2026-10-30",
+      "at": null,
+      "source": {
+        "label": "Eurostat · calendário oficial de divulgações",
+        "url": "https://ec.europa.eu/eurostat/news/euro-indicators/release-calendar?type=listMonth"
+      },
+      "impact": "Alto",
+      "assets": [
+        "EUR/USD",
+        "EUR/GBP"
+      ],
+      "why": "Primeira leitura do crescimento trimestral. Data confirmada; horário não verificado.",
+      "explanation": "Primeira leitura do crescimento trimestral. Data confirmada; horário não verificado.",
+      "favorable": "Crescimento acima do esperado pode apoiar o euro se melhorar a perspectiva econômica.",
+      "unfavorable": "Crescimento abaixo do esperado pode pressionar o euro se aumentar a expectativa de juros menores.",
+      "caution": "Cenários condicionais, não sinais. A primeira reação pode se inverter. Aguarde a confirmação do seu setup.",
+      "previous": "",
+      "forecast": "",
+      "actual": "",
+      "previousSource": {
+        "label": "",
+        "url": ""
+      },
+      "forecastSource": {
+        "label": "",
+        "url": ""
+      },
+      "actualSource": {
+        "label": "",
+        "url": ""
+      }
+    },
+    {
+      "id": "unemployment-eur-202609",
+      "title": "Desemprego da zona do euro · setembro",
+      "currency": "EUR",
+      "date": "2026-10-30",
+      "at": null,
+      "source": {
+        "label": "Eurostat · calendário oficial de divulgações",
+        "url": "https://ec.europa.eu/eurostat/news/euro-indicators/release-calendar?type=listMonth"
+      },
+      "impact": "Moderado",
+      "assets": [
+        "EUR/USD",
+        "EUR/GBP"
+      ],
+      "why": "Mede a proporção de desempregados na força de trabalho. Horário não verificado.",
+      "explanation": "Mede a proporção de desempregados na força de trabalho. Horário não verificado.",
+      "favorable": "Desemprego menor que o esperado pode apoiar o euro pela leitura de atividade firme.",
+      "unfavorable": "Desemprego maior que o esperado pode pressionar o euro pela leitura de atividade fraca.",
+      "caution": "Cenários condicionais, não sinais. A primeira reação pode se inverter. Aguarde a confirmação do seu setup.",
+      "previous": "",
+      "forecast": "",
+      "actual": "",
+      "previousSource": {
+        "label": "",
+        "url": ""
+      },
+      "forecastSource": {
+        "label": "",
+        "url": ""
+      },
+      "actualSource": {
+        "label": "",
+        "url": ""
+      }
+    },
+    {
       "id": "eci-2026q3",
       "title": "Custo do emprego nos EUA · 3º trimestre",
       "currency": "USD",
@@ -775,24 +847,25 @@
       }
     },
     {
-      "id": "gdp-eur-2026q3",
-      "title": "PIB da zona do euro · prévia do 3º trimestre",
-      "currency": "EUR",
-      "date": "2026-10-30",
-      "at": null,
+      "id": "jolts-2026-09",
+      "title": "JOLTS · vagas de emprego de setembro",
+      "currency": "USD",
+      "date": "2026-11-03",
+      "at": "2026-11-03T15:00:00Z",
       "source": {
-        "label": "Eurostat · próxima prévia em 30/10",
-        "url": "https://ec.europa.eu/eurostat/en/web/products-euro-indicators/w/2-30072026-ap"
+        "label": "BLS · calendário oficial, 10h Eastern",
+        "url": "https://www.bls.gov/schedule/news_release/jolts.htm"
       },
       "impact": "Alto",
       "assets": [
         "EUR/USD",
-        "EUR/GBP"
+        "USD/JPY",
+        "XAU/USD"
       ],
-      "why": "Primeira leitura do crescimento trimestral. Data confirmada; horário não verificado.",
-      "explanation": "Primeira leitura do crescimento trimestral. Data confirmada; horário não verificado.",
-      "favorable": "Crescimento acima do esperado pode apoiar o euro se melhorar a perspectiva econômica.",
-      "unfavorable": "Crescimento abaixo do esperado pode pressionar o euro se aumentar a expectativa de juros menores.",
+      "why": "Mostra a demanda por trabalhadores e pode alterar expectativas sobre os juros do Fed.",
+      "explanation": "Conta vagas abertas, contratações e desligamentos; não é o mesmo indicador que o payroll.",
+      "favorable": "Vagas acima do esperado podem apoiar o dólar se indicarem demanda de trabalho mais firme.",
+      "unfavorable": "Vagas abaixo do esperado podem pressionar o dólar se reforçarem a leitura de desaceleração.",
       "caution": "Cenários condicionais, não sinais. A primeira reação pode se inverter. Aguarde a confirmação do seu setup.",
       "previous": "",
       "forecast": "",
@@ -811,24 +884,170 @@
       }
     },
     {
-      "id": "unemployment-eur-202609",
-      "title": "Desemprego da zona do euro · setembro",
+      "id": "hicp-eur-202610-flash",
+      "title": "Inflação da zona do euro · prévia de outubro",
       "currency": "EUR",
-      "date": "2026-10-30",
+      "date": "2026-11-04",
       "at": null,
       "source": {
-        "label": "Eurostat · próxima divulgação em 30/10",
-        "url": "https://ec.europa.eu/eurostat/web/products-euro-indicators/w/3-01102026-ap"
+        "label": "Eurostat · calendário oficial; horário ainda não verificado",
+        "url": "https://ec.europa.eu/eurostat/news/euro-indicators/release-calendar"
       },
-      "impact": "Moderado",
+      "impact": "Alto",
       "assets": [
         "EUR/USD",
         "EUR/GBP"
       ],
-      "why": "Mede a proporção de desempregados na força de trabalho. Horário não verificado.",
-      "explanation": "Mede a proporção de desempregados na força de trabalho. Horário não verificado.",
-      "favorable": "Desemprego menor que o esperado pode apoiar o euro pela leitura de atividade firme.",
-      "unfavorable": "Desemprego maior que o esperado pode pressionar o euro pela leitura de atividade fraca.",
+      "why": "Primeira estimativa da inflação de outubro e referência importante para o cenário do BCE.",
+      "explanation": "Compara a variação de preços ao consumidor na zona do euro; o horário não foi confirmado nesta edição.",
+      "favorable": "Inflação acima do esperado pode apoiar o euro se elevar a expectativa de juros.",
+      "unfavorable": "Inflação abaixo do esperado pode pressionar o euro se reduzir a expectativa de juros.",
+      "caution": "Cenários condicionais, não sinais. A primeira reação pode se inverter. Aguarde a confirmação do seu setup.",
+      "previous": "",
+      "forecast": "",
+      "actual": "",
+      "previousSource": {
+        "label": "",
+        "url": ""
+      },
+      "forecastSource": {
+        "label": "",
+        "url": ""
+      },
+      "actualSource": {
+        "label": "",
+        "url": ""
+      }
+    },
+    {
+      "id": "trade-2026-09",
+      "title": "Balança comercial dos EUA · setembro",
+      "currency": "USD",
+      "date": "2026-11-04",
+      "at": "2026-11-04T13:30:00Z",
+      "source": {
+        "label": "BEA · calendário oficial, 8h30 Eastern",
+        "url": "https://www.bea.gov/news/schedule"
+      },
+      "impact": "Moderado",
+      "assets": [
+        "EUR/USD",
+        "USD/JPY"
+      ],
+      "why": "Exportações e importações ajudam a avaliar demanda e a contribuição do comércio ao crescimento.",
+      "explanation": "Mede a diferença entre exportações e importações de bens e serviços.",
+      "favorable": "Déficit menor que o esperado pode apoiar o dólar, dependendo da composição e da reação dos juros.",
+      "unfavorable": "Déficit maior que o esperado pode pesar sobre o dólar, mas a reação não é automática.",
+      "caution": "Cenários condicionais, não sinais. A primeira reação pode se inverter. Aguarde a confirmação do seu setup.",
+      "previous": "",
+      "forecast": "",
+      "actual": "",
+      "previousSource": {
+        "label": "",
+        "url": ""
+      },
+      "forecastSource": {
+        "label": "",
+        "url": ""
+      },
+      "actualSource": {
+        "label": "",
+        "url": ""
+      }
+    },
+    {
+      "id": "claims-2026-11-05",
+      "title": "Pedidos de seguro-desemprego dos EUA",
+      "currency": "USD",
+      "date": "2026-11-05",
+      "at": "2026-11-05T13:30:00Z",
+      "source": {
+        "label": "Departamento do Trabalho · calendário semanal, 8h30 Eastern",
+        "url": "https://oui.doleta.gov/unemploy/claims_arch.asp"
+      },
+      "impact": "Moderado",
+      "assets": [
+        "EUR/USD",
+        "USD/JPY",
+        "XAU/USD"
+      ],
+      "why": "É uma leitura frequente das condições do emprego americano.",
+      "explanation": "Conta novos pedidos de benefício; não é o mesmo indicador que o payroll.",
+      "favorable": "Pedidos menores que o esperado podem apoiar o dólar se indicarem emprego mais firme.",
+      "unfavorable": "Pedidos maiores que o esperado podem pressionar o dólar se aumentarem a expectativa de juros menores.",
+      "caution": "Cenários condicionais, não sinais. A primeira reação pode se inverter. Aguarde a confirmação do seu setup.",
+      "previous": "",
+      "forecast": "",
+      "actual": "",
+      "previousSource": {
+        "label": "",
+        "url": ""
+      },
+      "forecastSource": {
+        "label": "",
+        "url": ""
+      },
+      "actualSource": {
+        "label": "",
+        "url": ""
+      }
+    },
+    {
+      "id": "productivity-2026q3-prelim",
+      "title": "Produtividade e custos · prévia do 3º trimestre",
+      "currency": "USD",
+      "date": "2026-11-05",
+      "at": "2026-11-05T13:30:00Z",
+      "source": {
+        "label": "BLS · calendário oficial, 8h30 Eastern",
+        "url": "https://www.bls.gov/schedule/news_release/current_year.asp"
+      },
+      "impact": "Moderado",
+      "assets": [
+        "EUR/USD",
+        "USD/JPY"
+      ],
+      "why": "Produtividade e custos unitários ajudam a avaliar atividade e pressão de custos.",
+      "explanation": "Relaciona produção, horas trabalhadas e custos do trabalho; é uma estimativa preliminar.",
+      "favorable": "Produtividade mais forte com custos contidos pode melhorar a leitura de atividade sem elevar tanto a inflação.",
+      "unfavorable": "Custos unitários mais altos podem reforçar preocupação inflacionária; a reação do dólar depende dos juros.",
+      "caution": "Cenários condicionais, não sinais. A primeira reação pode se inverter. Aguarde a confirmação do seu setup.",
+      "previous": "",
+      "forecast": "",
+      "actual": "",
+      "previousSource": {
+        "label": "",
+        "url": ""
+      },
+      "forecastSource": {
+        "label": "",
+        "url": ""
+      },
+      "actualSource": {
+        "label": "",
+        "url": ""
+      }
+    },
+    {
+      "id": "payroll-2026-10",
+      "title": "Payroll e desemprego · outubro",
+      "currency": "USD",
+      "date": "2026-11-06",
+      "at": "2026-11-06T13:30:00Z",
+      "source": {
+        "label": "BLS · calendário oficial, 8h30 Eastern",
+        "url": "https://www.bls.gov/schedule/news_release/current_year.asp"
+      },
+      "impact": "Alto",
+      "assets": [
+        "EUR/USD",
+        "USD/JPY",
+        "XAU/USD"
+      ],
+      "why": "Emprego, desemprego, salários e revisões podem alterar fortemente expectativas sobre os juros.",
+      "explanation": "Reúne criação líquida de empregos, taxa de desemprego e salários; revise também os meses anteriores.",
+      "favorable": "Emprego e salários acima do esperado podem apoiar o dólar se elevarem a expectativa de juros.",
+      "unfavorable": "Emprego mais fraco pode pressionar o dólar; em aversão ao risco, a reação pode divergir.",
       "caution": "Cenários condicionais, não sinais. A primeira reação pode se inverter. Aguarde a confirmação do seu setup.",
       "previous": "",
       "forecast": "",
@@ -848,12 +1067,12 @@
     }
   ],
   "notes": [
-    "Fatos selecionados de 10 a 16/10/2026; agenda verificada até 30/10. Eventos anteriores preservados como histórico, sem redatar.",
+    "Fatos selecionados de 17 a 23/10/2026; agenda USD/EUR verificada até 06/11. Eventos anteriores foram preservados como histórico, sem redatar.",
     "Impacto Alto/Moderado/Baixo é classificação editorial; não mede probabilidade de valorização. Não há consenso numérico verificado nesta edição.",
-    "Horários convertidos com America/New_York e Europe/Berlin. Em 29/10, 14h15 em Frankfurt equivale a 10h15 em Brasília.",
-    "PIB e desemprego da zona do euro em 30/10: datas confirmadas; horários pendentes. A próxima inflação preliminar da zona do euro consta para 04/11, fora desta janela.",
-    "COT: posições de 13/10/2026 obtidas na API CFTC TFF Futures Only. Contratos de gestores e alavancados não representam fluxo monetário.",
+    "Horários dos EUA foram convertidos de America/New_York para UTC respeitando o fim do horário de verão em 01/11; a interface converte para Brasília.",
+    "PIB e desemprego da zona do euro em 30/10 e inflação preliminar em 04/11: datas mantidas conforme o calendário oficial; horários permanecem em branco porque não foram verificados.",
+    "COT: posições de 20/10/2026 obtidas na API CFTC TFF Futures Only. Gestores e alavancados são categorias de posições em contratos, não fluxo monetário.",
     "As datas de referência das taxas de juros permanecem em setembro. A agenda não é um feed de resultados em tempo real."
   ],
-  "calendarUpdatedAt": "2026-10-16T23:39:01.566852+00:00"
+  "calendarUpdatedAt": "2026-10-23T23:34:56.000Z"
 }
