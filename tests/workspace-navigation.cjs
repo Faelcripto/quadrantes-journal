@@ -10,5 +10,9 @@ assert(source.includes('<Calendar/><section className="panel"><div className="pa
 assert(!source.includes("setView('Emocional')"));
 assert(!source.includes('<EmotionalDiary'));
 assert(source.includes('await persist({...data,capital:riskCapital,riskPercent,dailyLimit})'));
-assert(source.includes('Emoção na entrada'));
+assert(!source.includes('Emoção na entrada'));
+assert(!source.includes('Segui meu plano de trading'));
+assert(!source.includes('O que aprendi?'));
+assert(source.includes('name="quantity"'));
+assert(source.includes('Resultado líquido (USD)'));
 console.log('PASS: navigation, operations calendar, risk persistence and retained trade emotions');

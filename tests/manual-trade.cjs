@@ -1,0 +1,17 @@
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const {z}=require('zod');
+const route=fs.readFileSync('app/api/journal/route.ts','utf8');
+const schema=new Function('z',route.match(/const trade=([\s\S]*?);\nconst schema/)[0].replace(/\nconst schema$/,'')+'return trade;')(z);
+const entry={id:'test',date:'2026-11-17',asset:'EURGBP',side:'Compra',strategy:'Correção',quantity:0.08,pnl:-0.11,fees:0.56};
+const result=schema.parse(entry);
+assert.equal(result.quantity,0.08);
+assert.equal(result.emotion,undefined);
+assert.equal(result.followed,undefined);
+assert.equal(result.risk,undefined);
+assert.equal(Number((result.pnl-result.fees).toFixed(2)),-0.67);
+const legacy={...entry,emotion:'Calmo',followed:false,notes:'Preservar',risk:10};
+assert.deepEqual(schema.parse(legacy),legacy);
+assert(!schema.safeParse({...entry,quantity:-1}).success);
+assert(!schema.safeParse({...entry,fees:-0.28}).success);
+console.log('PASS: simplified trades, costs, optional risk and preserved legacy fields');

@@ -2,7 +2,7 @@ import { currentStrategies } from '@/lib/strategies';
 import { createClient } from '@/lib/supabase/server';
 import { z } from 'zod';
 export const dynamic = 'force-dynamic';
-const trade=z.object({id:z.string().max(80),date:z.string().regex(/^\d{4}-\d{2}-\d{2}$/),asset:z.string().min(1).max(30),side:z.enum(['Compra','Venda']),strategy:z.string().min(1).max(80),emotion:z.enum(['Confiante','Calmo','Ansioso','Impulsivo','Frustrado']),pnl:z.number().finite().min(-1e9).max(1e9),fees:z.number().min(0).max(1e9),risk:z.number().positive().max(1e9),followed:z.boolean(),notes:z.string().max(5000),photos:z.array(z.object({id:z.string().uuid(),name:z.string().min(1).max(255)})).max(6).optional()});
+const trade=z.object({id:z.string().max(80),date:z.string().regex(/^\d{4}-\d{2}-\d{2}$/),asset:z.string().min(1).max(30),side:z.enum(['Compra','Venda']),strategy:z.string().min(1).max(80),emotion:z.enum(['Confiante','Calmo','Ansioso','Impulsivo','Frustrado']).optional(),pnl:z.number().finite().min(-1e9).max(1e9),fees:z.number().min(0).max(1e9),risk:z.number().positive().max(1e9).optional(),followed:z.boolean().optional(),notes:z.string().max(5000).optional(),quantity:z.number().finite().positive().max(1e9).optional(),photos:z.array(z.object({id:z.string().uuid(),name:z.string().min(1).max(255)})).max(6).optional()});
 const schema=z.object({trades:z.array(trade).max(5000),strategies:z.array(z.object({name:z.string().min(1).max(80),rules:z.string().max(5000)})).max(100),capital:z.number().positive().max(1e12),riskPercent:z.number().positive().max(100),dailyLimit:z.number().positive().max(100)});
 
 const reply = (body: unknown, status = 200) => Response.json(body, { status, headers: { 'Cache-Control': 'private, no-store' } });
