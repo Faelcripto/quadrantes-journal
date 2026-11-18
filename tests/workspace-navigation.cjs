@@ -1,0 +1,14 @@
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const source = fs.readFileSync('app/journal.tsx', 'utf8');
+const nav = source.match(/const nav=(.*) as const;/)[1];
+assert(!nav.includes('Emocional'));
+assert(!nav.includes('Gerenciamento'));
+assert(nav.includes('Operações'));
+assert(source.includes("{view==='Operações'&&<section className=\"operations-management\""));
+assert(source.includes('<Calendar/><section className="panel"><div className="panel-head"><h2>Histórico de operações</h2>'));
+assert(!source.includes("setView('Emocional')"));
+assert(!source.includes('<EmotionalDiary'));
+assert(source.includes('await persist({...data,capital:riskCapital,riskPercent,dailyLimit})'));
+assert(source.includes('Emoção na entrada'));
+console.log('PASS: navigation, operations calendar, risk persistence and retained trade emotions');
