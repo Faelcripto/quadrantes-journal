@@ -137,3 +137,29 @@ body {
 }
 
 :root,.dark {--background:var(--site-base,#030303);--foreground:#edf0f5;--card:var(--site-panel,#0d0d0d);--card-foreground:#edf0f5;--popover:#141414;--popover-foreground:#edf0f5;--primary:var(--brand-accent,#f99545);--primary-foreground:#13100e;--secondary:#191919;--secondary-foreground:#edf0f5;--muted:#191919;--muted-foreground:#969da9;--accent:#202020;--accent-foreground:#ffffff;--border:#262626;--input:#363636;--ring:var(--brand-accent,#f99545);--sidebar:var(--site-side,#080808);--sidebar-foreground:#a4abb6;--sidebar-accent:#2c241e;--sidebar-accent-foreground:var(--brand-accent,#f99545);--sidebar-border:#262626;}
+
+/* Quadrantes terminal palette */
+body .workspace,body .auth-page,body:has(.admin-page){
+ background:radial-gradient(ellipse 55rem 26rem at 87% 1%,#563569 0%,#2f2148 35%,transparent 76%),#0c0c10;color:#f3f0fa}
+body .workspace .topbar{background:linear-gradient(105deg,#101014 35%,#332144 78%,#4b3047);border-color:#43354b}
+body .app-sidebar [data-slot=sidebar-inner]{background:linear-gradient(175deg,#101013 55%,#24192e)}
+body .workspace .panel,body .workspace .metric,body .workspace .market-session-panel,body .admin-page form,body .trade-detail[data-slot=dialog-content],body .trade-dialog[data-slot=dialog-content]{background:#121216;border:1px solid #33303c;border-radius:12px;color:#f1eef6}
+body .workspace .metrics{gap:1px;overflow:hidden;background:#37313e;border:1px solid #37313e;border-radius:12px}
+body .workspace .metric{border:0;border-radius:0;background:linear-gradient(125deg,#141418,#1f1929)}
+body .workspace .equity{background:radial-gradient(ellipse at bottom left,#2e2144,transparent 53%),#101013}
+body .workspace .sidebar-quote,body .workspace .toolbar{border-color:#38313f}
+body .workspace .primary,body .trade-dialog .primary,body .trade-detail .primary,body .auth-form button[type=submit]{background:#23d99b;color:#081b15;border-color:#39dca4}
+body .app-sidebar [data-slot=sidebar-menu-button][data-active=true],body .community-tabs button.selected,body .community-tabs button:first-child.selected,body .admin-page button.selected{background:#32233d;color:#efd6ff;border:1px solid #745383;box-shadow:none}
+body .community-tabs button:first-child{background:#211927;color:#eac9ff;border-color:#55405e}
+body .workspace .eyebrow,body .community-caption,body .admin-page small,body .auth-eyebrow{color:#d5b1ec}
+body .workspace .positive,body .trade-detail .positive{color:#4be0aa}body .workspace .negative,body .trade-detail .negative{color:#ff8298}
+body .workspace .calendar,body .workspace .panel:has(>.annual-grid){background:#050506;border-color:#26242b}
+body .workspace .day,body .workspace .annual-month{background:#0a0a0c;border-color:#26242b;color:#dedbe3}
+body .workspace .day.blank{background:#050506;border-color:#121215}
+body .workspace :is(.day,.annual-month).win{background:#092a20;border-color:#235740;color:#69e6ae}
+body .workspace :is(.day,.annual-month).loss{background:#30111c;border-color:#67273a;color:#ff9aaa}
+body .workspace .day.today{outline-color:#e7b75c}
+body .workspace .day:not(.blank):hover{border-color:#beb2c9}
+body .auth-page .auth-story{background:radial-gradient(ellipse at bottom left,#51335e,transparent 66%),#101014;border-color:#372a40}
+body .auth-panel .auth-form{padding:clamp(16px,3vw,32px);background:#131218;border:1px solid #39303e;border-radius:14px}
+@media(min-width:1100px){body .workspace .chart-row{grid-template-columns:minmax(0,2.2fr) minmax(240px,1fr)}}
