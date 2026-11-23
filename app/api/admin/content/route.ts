@@ -19,7 +19,7 @@ export async function PUT(req:Request){
   if(key==='radar'){
    const old=await supabase.from('site_content').select('payload').eq('key','radar').maybeSingle();if(old.error)throw old.error;
    const next=parsed.data as import('@/lib/site-content').SiteContent['radar'];
-   next.cards=next.cards.map(card=>{const previous=old.data?.payload?.cards?.find((c:{id:string})=>c.id===card.id);const {lastEdited:ignored,...fields}=card;const {lastEdited:stamp,...before}=previous||{};return {...fields,lastEdited:JSON.stringify(fields)===JSON.stringify(before)&&stamp?stamp:new Date().toISOString()}});
+   next.cards=next.cards.map(card=>{const previous=old.data?.payload?.cards?.find((c:{id:string})=>c.id===card.id);const {lastEdited:ignored,...fields}=card;const {lastEdited:stamp,...before}=previous||{};return {...fields,...(previous?.publishedAt?{publishedAt:previous.publishedAt}:!previous?{publishedAt:new Date().toISOString()}:{}),lastEdited:JSON.stringify(fields)===JSON.stringify(before)&&stamp?stamp:new Date().toISOString()}});
   }
   const record={key,payload:parsed.data,revision:body.revision+1,updated_at:new Date().toISOString()};
   const result=body.revision===0?await supabase.from('site_content').insert(record).select('revision').single():await supabase.from('site_content').update(record).eq('key',key).eq('revision',body.revision).select('revision').maybeSingle();
