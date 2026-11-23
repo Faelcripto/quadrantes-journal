@@ -17,7 +17,7 @@ export default async function RootLayout({
 }>) {
   const a=await appearance();
   const colors=a.background==="black"?{base:"#030303",side:"#080808",panel:"#0d0d0d",field:"#111111"}:{base:"#101114",side:"#151619",panel:"#1b1c20",field:"#222329"};
-  const accent={orange:"#97cdeb",gold:"#97cdeb",mint:"#72d9b2"}[a.accent];
+  const accent={orange:"#f99545",gold:"#f99545",mint:"#72d9b2"}[a.accent];
   return (
     <html lang="pt-BR" style={{"--site-base":colors.base,"--site-side":colors.side,"--site-panel":colors.panel,"--site-field":colors.field,"--brand-accent":accent,"--primary":accent,"--ring":accent,"--background":colors.base,"--card":colors.panel,"--sidebar":colors.side} as React.CSSProperties}>
       <body className="antialiased">{children}</body>
