@@ -17,3 +17,7 @@
 .market-session-panel .session-strip.is-active{background:none;border-color:#735238}
 @media(max-width:1200px){.header-focus{order:3;flex-basis:100%;max-width:none}.topbar .top-right{margin-left:auto}}
 @media(max-width:600px){.header-focus{min-width:0;gap:10px}.header-focus-pair{font-size:14px}.header-focus-assets{gap:5px 12px}.market-session-panel .session-strips{row-gap:18px}.market-session-panel .session-strip:nth-child(3){border-left:0;padding-left:0}.market-session-panel{padding-top:20px}}
+
+/* Azul reservado à curva de resultado e aos símbolos da sessão ativa. */
+.workspace .panel.equity .recharts-area-curve{stroke:#65b4ff!important}
+.workspace .topbar .header-focus .header-focus-pair{color:#83c5ff!important;text-shadow:0 0 5px #399cfd88,0 0 14px #2586ef55!important}
