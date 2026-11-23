@@ -8,7 +8,7 @@ async function appearance(){
  try{return (await readSiteContent(await createClient(),true)).content.appearance;}
  catch{return defaultContent.appearance;}
 }
-export async function generateMetadata():Promise<Metadata>{const a=await appearance();return {title:'Método Quadrantes',description:a.description,icons:{icon:'/metodo-quadrantes.webp'}};}
+export async function generateMetadata():Promise<Metadata>{const a=await appearance();return {title:'Método Quadrantes',description:a.description,icons:{icon:'/mq-cor.webp'}};}
 
 export default async function RootLayout({
   children,
