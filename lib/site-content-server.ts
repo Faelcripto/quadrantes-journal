@@ -1,3 +1,4 @@
+import {radarDay} from './radar-clock';
 import 'server-only';
 import {normalizeCourse} from './course-progress';
 import { createClient } from './supabase/server';
@@ -20,6 +21,7 @@ export async function readSiteContent(supabase:Awaited<ReturnType<typeof createC
   if(!parsed.success) throw Error('Conteúdo inválido: '+key);
   Object.assign(content,{[key]:parsed.data});revisions[key]=row.revision;
  }
+ const today=radarDay();content.radar.cards=content.radar.cards.filter(c=>c.date===today);
  content.course=normalizeCourse(content.course);
  return {content,revisions};
 }
