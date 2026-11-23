@@ -140,26 +140,30 @@ body {
 
 /* Quadrantes terminal palette */
 body .workspace,body .auth-page,body:has(.admin-page){
- background:radial-gradient(ellipse 55rem 26rem at 87% 1%,#70551e 0%,#392d18 35%,transparent 76%),#0c0c10;color:#f8f4ea}
-body .workspace .topbar{background:linear-gradient(105deg,#101014 35%,#3c2e17 78%,#564019);border-color:#463b26}
-body .app-sidebar [data-slot=sidebar-inner]{background:linear-gradient(175deg,#101013 55%,#252016)}
-body .workspace .panel,body .workspace .metric,body .workspace .market-session-panel,body .admin-page form,body .trade-detail[data-slot=dialog-content],body .trade-dialog[data-slot=dialog-content]{background:#121216;border:1px solid #37342c;border-radius:12px;color:#f3f0e8}
-body .workspace .metrics{gap:1px;overflow:hidden;background:#39362a;border:1px solid #39362a;border-radius:12px}
-body .workspace .metric{border:0;border-radius:0;background:linear-gradient(125deg,#141418,#232016)}
-body .workspace .equity{background:radial-gradient(ellipse at bottom left,#322919,transparent 53%),#101013}
-body .workspace .sidebar-quote,body .workspace .toolbar{border-color:#3a352a}
+ background:radial-gradient(ellipse 55rem 26rem at 87% 1%,#1e5570 0%,#182d39 35%,transparent 76%),#0c0c10;color:#eaf4f8}
+body .workspace .topbar{background:linear-gradient(105deg,#101014 35%,#172e3c 78%,#194056);border-color:#263b46}
+body .app-sidebar [data-slot=sidebar-inner]{background:linear-gradient(175deg,#101013 55%,#162025)}
+body .workspace .panel,body .workspace .metric,body .workspace .market-session-panel,body .admin-page form,body .trade-detail[data-slot=dialog-content],body .trade-dialog[data-slot=dialog-content]{background:#121216;border:1px solid #2c3437;border-radius:12px;color:#e8f0f3}
+body .workspace .metrics{gap:1px;overflow:hidden;background:#2a3639;border:1px solid #2a3639;border-radius:12px}
+body .workspace .metric{border:0;border-radius:0;background:linear-gradient(125deg,#141418,#162023)}
+body .workspace .equity{background:radial-gradient(ellipse at bottom left,#192932,transparent 53%),#101013}
+body .workspace .sidebar-quote,body .workspace .toolbar{border-color:#2a353a}
 body .workspace .primary,body .trade-dialog .primary,body .trade-detail .primary,body .auth-form button[type=submit]{background:#23d99b;color:#081b15;border-color:#39dca4}
-body .app-sidebar [data-slot=sidebar-menu-button][data-active=true],body .community-tabs button.selected,body .community-tabs button:first-child.selected,body .admin-page button.selected{background:#3a2e16;color:#ffe3a0;border:1px solid #8d7036;box-shadow:none}
-body .community-tabs button:first-child{background:#252015;color:#ffd47b;border-color:#594923}
-body .workspace .eyebrow,body .community-caption,body .admin-page small,body .auth-eyebrow{color:#f3c464}
+body .app-sidebar [data-slot=sidebar-menu-button][data-active=true],body .community-tabs button.selected,body .community-tabs button:first-child.selected,body .admin-page button.selected{background:#162e3a;color:#a0e3ff;border:1px solid #36708d;box-shadow:none}
+body .community-tabs button:first-child{background:#152025;color:#7bd4ff;border-color:#234959}
+body .workspace .eyebrow,body .community-caption,body .admin-page small,body .auth-eyebrow{color:#64c4f3}
 body .workspace .positive,body .trade-detail .positive{color:#4be0aa}body .workspace .negative,body .trade-detail .negative{color:#ff8298}
 body .workspace .calendar,body .workspace .panel:has(>.annual-grid){background:#050506;border-color:#26242b}
-body .workspace .day,body .workspace .annual-month{background:#0a0a0c;border-color:#26242b;color:#e2dfd6}
+body .workspace .day,body .workspace .annual-month{background:#0a0a0c;border-color:#26242b;color:#d6dfe2}
 body .workspace .day.blank{background:#050506;border-color:#121215}
 body .workspace :is(.day,.annual-month).win{background:#092a20;border-color:#235740;color:#69e6ae}
 body .workspace :is(.day,.annual-month).loss{background:#30111c;border-color:#67273a;color:#ff9aaa}
-body .workspace .day.today{outline-color:#e7b75c}
-body .workspace .day:not(.blank):hover{border-color:#c9bb99}
-body .auth-page .auth-story{background:radial-gradient(ellipse at bottom left,#594619,transparent 66%),#101014;border-color:#383124}
-body .auth-panel .auth-form{padding:clamp(16px,3vw,32px);background:#141310;border:1px solid #3d3527;border-radius:14px}
+body .workspace .day.today{outline-color:#5cb7e7}
+body .workspace .day:not(.blank):hover{border-color:#99bbc9}
+body .auth-page .auth-story{background:radial-gradient(ellipse at bottom left,#194659,transparent 66%),#101014;border-color:#243138}
+body .auth-panel .auth-form{padding:clamp(16px,3vw,32px);background:#101314;border:1px solid #27353d;border-radius:14px}
 @media(min-width:1100px){body .workspace .chart-row{grid-template-columns:minmax(0,2.2fr) minmax(240px,1fr)}}
+
+.mq-signature{display:grid;justify-items:center;align-content:center;gap:5px;padding:18px 6px 22px;text-align:center;color:#ecf5fa;background:radial-gradient(ellipse 100px 45px at 50% 50px,#d5e0e5 10%,#acbac2 47%,transparent 100%)}
+.mq-signature img{display:block;width:126px;height:66px;object-fit:contain}.mq-signature small{font-size:12px;font-weight:650;letter-spacing:.34em;color:#b3c4cc}.mq-signature strong{font-size:18px;letter-spacing:.16em;line-height:1.25}.auth-story .mq-signature{width:min(100%,240px)}
+body .workspace .primary,body .trade-dialog .primary,body .auth-form button[type=submit]{background:#a4d9f6;border-color:#bde7ff;color:#0a1720}
