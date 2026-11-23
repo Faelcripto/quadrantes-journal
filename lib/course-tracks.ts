@@ -1,0 +1,2 @@
+export const tracks=['Base do mercado financeiro','Correção','Reversão','Continuação'] as const;
+export function courseTrack(m:{title:string;track?:string}){return m.track||tracks.slice(1).find(t=>m.title.toLowerCase().includes(t.toLowerCase())||(t==='Continuação'&&m.title.toLowerCase().includes('continuidade')))||tracks[0]}
