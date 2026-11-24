@@ -27,3 +27,14 @@ export default function MarketSessions(){
 }
 
 export function ActiveSessionNames(){const {state}=useContext(MarketContext);if(!state?.active.length)return null;return <div aria-label="Sessões ativas" style={{marginTop:3,color:'#83c5ff',fontSize:14,fontWeight:650}}>{state.active.map(w=>w.session.name).join(' · ')}</div>}
+
+const referencePips:Record<string,number>={'EUR/USD':0.1,'AUD/USD':0.1,'USD/JPY':0.1,'USD/CAD':0.2,'GBP/USD':0.3,'EUR/GBP':0.4,'EUR/JPY':0.5,'AUD/JPY':0.9,'GBP/JPY':1};
+export function SessionSpreadStrip(){
+ const {state}=useContext(MarketContext);
+ if(!state?.marketOpen||!state.active.length)return null;
+ const pairs=[...new Set(state.active.flatMap(w=>[...w.session.assets]))].filter(p=>Number.isFinite(referencePips[p])).sort((a,b)=>referencePips[a]-referencePips[b]||a.localeCompare(b)).slice(0,3);
+ if(!pairs.length)return null;
+ return <div style={{gridColumn:'1 / -1',minWidth:0,textAlign:'center',paddingBottom:8}}>
+ <div style={{display:'flex',justifyContent:'center',flexWrap:'wrap',gap:'4px 16px'}}>{pairs.map(p=><span key={p} style={{color:'#8dd5ff',fontSize:14,fontWeight:750,textShadow:'0 0 8px #389fff88'}}>{p} <small style={{color:'#b5c3d2',textShadow:'none'}}>{referencePips[p].toLocaleString('pt-BR')}</small></span>)}</div>
+ <a href="https://www.tickmill.com/eu/instruments/forex/" target="_blank" rel="noopener noreferrer" title="Referência Tickmill consultada em 24/11/2026. Sessões habituais; não verifica feriados nem a disponibilidade na conta." style={{color:'#b4bcc5',fontSize:12}}>Spread típico em pips · não é cotação ao vivo</a></div>
+}
