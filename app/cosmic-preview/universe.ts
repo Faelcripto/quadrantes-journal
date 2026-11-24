@@ -24,23 +24,46 @@ void main(){
  col+=stars(sky+eye.xy*.002,88.,7.)+stars(sky+eye.xy*.006,39.,31.);
  vec2 g=(sky-vec2(-aspect*.31,.235))*rot(.34);g.y*=3.4;float gr=length(g);
  col+=vec3(.23,.18,.32)*exp(-gr*40.)*(.55+.45*cos(atan(g.y,g.x)*2.+gr*122.));
- vec3 sun=vec3(-aspect*.9,.60,-2.6);vec3 sd=normalize(sun-eye);
- float dist=length(d-sd);float rays=.8+.2*sin(atan(d.y-sd.y,d.x-sd.x)*10.+t*.012);
- col+=vec3(1.,.59,.21)*(exp(-dist*15.)*.35*rays+exp(-dist*56.)*.95)+vec3(1.,.92,.70)*(1.-smoothstep(.010,.012,dist));
+ vec3 sun=vec3(.02,.06,-2.2);vec3 sd=normalize(sun-eye);
+ float fit=min(aspect,1.6),solarRadius=.47*min(1.,aspect+.25);
+ float limb=max(0.,length(cross(d,sun-eye))/solarRadius-1.);
+ float filaments=fb(normalize(d-sd+vec3(.00001))*7.+t*.011);
+ col+=vec3(1.,.37,.085)*exp(-limb*6.)*(.22+.48*filaments)+vec3(.42,.18,.055)*exp(-limb*1.5)*.45;
+ float nearest=sphere(eye,d,sun,solarRadius);
+ if(nearest<1e3){vec3 n=normalize(eye+d*nearest-sun),q=n;q.xz=rot(.012*t)*q.xz;
+ float plasma=fb(q*16.+3.*fb(q*5.+t*.013)),grain=noise(q*131.+2.*plasma);
+ vec3 flame=mix(vec3(.96,.26,.045),vec3(1.5,1.04,.50),smoothstep(.27,.75,plasma*.8+grain*.2));
+ col=flame*(.74+.26*max(0.,dot(n,-d)));}
  // Fine motes, with near and far planes responding differently to camera drift.
  col+=stars(sky+eye.xy*.055+vec2(t*.00028,-t*.00011),23.,13.)*vec3(.23,.51,.42);
  for(int j=0;j<2;j++){float k=float(j),period=21.+k*10.;float cycle=floor((t+5.+k*7.)/period);float phase=mod(t+5.+k*7.,period);
  float seed=hash(vec3(cycle,k,7.));vec2 dir=normalize(vec2(1.,-.26-.35*seed));vec2 q=sky+eye.xy*(.015+.018*k)-vec2(-aspect*.53,.10+.28*seed)+dir*(.12-phase*(.23+.04*k));float a=dot(q,dir),b=abs(q.x*dir.y-q.y*dir.x);
  col+=vec3(.63,.80,1.)*exp(-b*1100.)*exp(-abs(a)*42.)*(1.-smoothstep(.001,.006,a))*smoothstep(0.,.5,phase)*(1.-smoothstep(3.,4.,phase));}
- vec3 sat=vec3(aspect*1.17+.035*sin(t*.024),.53+.025*cos(t*.032),-.3);
- float rad=min(.70,aspect*.66);vec3 rn=normalize(vec3(-.23,.89,.38));float nearest=1e4;
- for(int j=0;j<4;j++){float k=float(j);vec3 c=sat;float r=rad;
- if(j==1){c=vec3(-aspect*.96,-.98,-1.5);r=.31;}
- if(j==2){c=vec3(aspect*.19+sin(t*.023)*.08,1.36,-2.9);r=.14;}
- if(j==3){c=sat+vec3(cos(.5+t*.035)*rad*2.35,sin(.5+t*.035)*rad*.55,sin(.5+t*.035)*rad*1.4);r=rad*.084;}
+ // All paths lie on one inclined plane. Project the ray into that same
+ // plane for fine orbital traces, then resolve nearer bodies by depth.
+ vec3 axis=normalize(vec3(1.,.23,0.)),side=normalize(vec3(-.09,.39,-.92)),pole=normalize(cross(axis,side));
+ float denom=dot(d,pole),plane=abs(denom)>.0001?dot(sun-eye,pole)/denom:1e4;
+ vec3 at=eye+d*plane-sun;
+ float path=length(vec2(dot(at,axis)/fit,dot(at,side)));
+ float rad=.235*min(1.,aspect+.32);vec3 rn=normalize(vec3(-.29,.89,.38)),sat=sun;
+ for(int j=0;j<8;j++){float k=float(j);
+ float orbit=2.53,angle=2.78,speed=.0012,r=rad;
+ if(j==1){orbit=1.71;angle=-2.06;speed=.003;r=.19;}
+ if(j==2){orbit=3.10;angle=.96;speed=.0009;r=.205;}
+ if(j==3){orbit=.87;angle=1.33;speed=.006;r=.076;}
+ if(j==4){orbit=2.14;angle=-.74;speed=.0017;r=.40;}
+ if(j==5){orbit=1.30;angle=-2.69;speed=.004;r=.108;}
+ if(j==6){orbit=2.84;angle=.12;speed=.001;r=.148;}
+ if(j==7){orbit=1.94;angle=2.12;speed=.002;r=.15;}
+ angle+=t*speed;vec3 c=sun+axis*(fit*orbit*cos(angle))+side*(orbit*sin(angle));
+ if(j==0)sat=c;else r*=min(1.,aspect+.32);
+ if(plane>0.&&plane<nearest){float line=exp(-abs(path-orbit)*max(30.,res.y*.13));col+=line*vec3(.095,.080,.066);}
  float h=sphere(eye,d,c,r);if(h>0.&&h<nearest){nearest=h;vec3 pos=eye+h*d,n=normalize(pos-c),l=normalize(sun-pos);vec3 tex=n;tex.xy=rot(-.19)*tex.xy;tex.xz=rot(t*(.022+k*.009))*tex.xz;
  float f=fb(tex*7.+k),lat=tex.y+.03*(f-.5);vec3 albedo=mix(vec3(.47,.31,.18),vec3(.93,.79,.57),clamp(.5+.23*sin(lat*38.)+.17*sin(lat*83.+f*4.)+.11*sin(lat*183.)+f*.17,0.,1.));
- if(j==1)albedo=mix(vec3(.035,.105,.18),vec3(.12,.54,.50),smoothstep(.32,.65,f));if(j==2)albedo=mix(vec3(.19,.09,.25),vec3(.66,.44,.47),f);if(j==3)albedo=vec3(.50,.45,.40)*f;
+ if(j==1){albedo=mix(vec3(.03,.14,.30),vec3(.14,.38,.24),smoothstep(.45,.53,f));albedo=mix(albedo,vec3(.85,.89,.91),smoothstep(.54,.68,fb(tex*13.+lat*2.))*.84);}
+ if(j==2||j==7)albedo=mix(vec3(.07,.22,.31),vec3(.36,.66,.72),.7*f+.14*sin(lat*34.));
+ if(j==3||j==5||j==6)albedo=mix(vec3(.20,.092,.048),vec3(.88,.50,.19),f);
+ if(j==4){float storm=length(vec2((tex.x-.32)*2.8,(lat+.24)*9.));albedo=mix(albedo,vec3(.60,.30,.19),exp(-storm*storm)*smoothstep(.1,.65,tex.z));}
  float shadow=1.;if(j==0){float a=dot(c-pos,rn)/dot(l,rn);if(a>.001)shadow-=.81*ringBand(length(pos+a*l-c)/r);}
  float nl=dot(n,l);col=albedo*(vec3(.065,.081,.12)+vec3(1.,.86,.66)*max(nl,0.)*shadow)+vec3(.40,.53,.66)*pow(1.-max(dot(n,-d),0.),4.)*(.09+.6*max(nl,0.));}}
  float den=dot(d,rn);if(abs(den)>.001){float h=dot(sat-eye,rn)/den;vec3 pos=eye+d*h;float r=length(pos-sat)/rad;
