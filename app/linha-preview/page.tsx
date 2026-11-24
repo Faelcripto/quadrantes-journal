@@ -6,7 +6,7 @@ export default function LinhaPreview(){return <div data-linha=""><style>{`
 [data-linha] .orbit-shell .workspace .page-content .saturn-sky{display:grid;grid-template-columns:minmax(0,1fr) minmax(110px,32%);gap:12px 20px;align-items:center;min-height:104px;margin-block:0 16px;padding-block:14px}
 [data-linha] .saturn-sky>div{grid-column:1;grid-row:1;min-width:0}
 [data-linha] .saturn-sky h1{font-size:clamp(1.55rem,2.4vw,2.15rem);line-height:1.15;letter-spacing:-.035em;margin:0;text-wrap:balance}
-[data-linha] .saturn-sky p{margin:6px 0 0;line-height:1.45}
+[data-linha] .saturn-sky > div > h1 + p{display:none}
 [data-linha] .saturn-sky::after{content:"";grid-row:1;grid-column:2;display:block;width:100%;height:clamp(64px,7vw,108px);background:url('/linha-cobre-preview.svg') center/100% auto no-repeat;pointer-events:none}
 [data-linha] .saturn-sky:has(>button){grid-template-columns:minmax(0,1fr) minmax(110px,24%) auto}
 [data-linha] .saturn-sky>button{grid-column:3;grid-row:1;justify-self:end}
