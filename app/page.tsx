@@ -1,5 +1,6 @@
 import {readSiteContent,isSiteAdmin} from '@/lib/site-content-server';
 import Journal from './journal';
+import './linha-cobre.css';
 import { createClient } from '@/lib/supabase/server';
 import { redirect } from 'next/navigation';
 export const dynamic = 'force-dynamic';
@@ -8,5 +9,5 @@ export default async function Page() {
   const { data: { user } } = await supabase.auth.getUser();
   if (!user) redirect('/login');
   const [{content},admin]=await Promise.all([readSiteContent(supabase),isSiteAdmin(supabase,user.id)]);
-  return <Journal user={user.email || 'Trader'} content={content} isAdmin={admin} />;
+  return <div data-linha=""><Journal user={user.email || 'Trader'} content={content} isAdmin={admin} /></div>;
 }
