@@ -2,7 +2,9 @@ import Journal from '../journal';
 import {defaultContent} from '@/lib/site-content';
 export const metadata={robots:{index:false,follow:false}};
 export default function LinhaPreview(){return <div data-linha=""><style>{`
-[data-linha] .orbit-universe{background:radial-gradient(ellipse at 78% 18%,#211820 0%,transparent 36%),linear-gradient(120deg,#071221,#030811 65%,#030407)!important}
+[data-linha] .orbit-universe .orbit-haze{display:none}
+[data-linha] .orbit-universe .orbit-dust{opacity:.22}
+[data-linha] .orbit-shell .workspace :is(.panel,.metric){background:linear-gradient(150deg,#00040aeb,#000b16db 60%,#03050ce6)!important}
 [data-linha] .orbit-shell .workspace .page-content .saturn-sky{display:grid;grid-template-columns:minmax(0,1fr) minmax(110px,32%);gap:12px 20px;align-items:center;min-height:104px;margin-block:0 16px;padding-block:14px}
 [data-linha] .saturn-sky>div{grid-column:1;grid-row:1;min-width:0}
 [data-linha] .saturn-sky h1{font-size:clamp(1.55rem,2.4vw,2.15rem);line-height:1.15;letter-spacing:-.035em;margin:0;text-wrap:balance}
@@ -16,6 +18,7 @@ body:has([data-linha]) [data-slot="sidebar-content"] :is(.community-tabs button,
 body:has([data-linha]) .community-tabs button>b{margin-inline-start:auto}
 body:has([data-linha]) [data-slot="sidebar-content"] button>svg{width:18px;height:18px;flex:none}
 
+[data-linha] .orbit-universe,
 body:has([data-linha]) :is(.app-sidebar [data-slot="sidebar-inner"],[data-sidebar="sidebar"][data-mobile="true"]){
  background:radial-gradient(1px 1px at 11% 16%,#b3cae687 65%,transparent),radial-gradient(1px 1px at 76% 38%,#a8bada6e 65%,transparent),radial-gradient(1px 1px at 57% 73%,#c8dbea77 65%,transparent),linear-gradient(180deg,#000002 0%,#00040a 20%,#000b16 49%,#010a12 73%,#03050c 92%,#010207 100%)!important;
  background-size:199px 223px,271px 317px,173px 281px,100% 100%!important;
