@@ -3,6 +3,7 @@ import {createContext,useContext,useEffect,useMemo,useState,type ReactNode} from
 import {Clock3,Globe2,ArrowRight} from 'lucide-react';
 import {sessions,sessionSchedule} from '@/lib/market-sessions';
 import './market-sessions.css';
+import './economic-wire.css';
 const clock=(at:number)=>new Intl.DateTimeFormat('pt-BR',{timeZone:'America/Sao_Paulo',hour:'2-digit',minute:'2-digit'}).format(at);
 const dated=(at:number)=>new Intl.DateTimeFormat('pt-BR',{timeZone:'America/Sao_Paulo',day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'}).format(at);
 type MarketClock={now:number|null;state:ReturnType<typeof sessionSchedule>|null};
@@ -19,13 +20,15 @@ export function FocusPairs({featured=false}:{featured?:boolean}={}){
  return <div className="header-focus" aria-label="Pares em foco por sessão"><div className="header-focus-assets">{state?.assets.length?state.assets.map(asset=><span className="header-focus-pair" key={asset}>{asset}</span>):<span className="header-focus-empty">{!state?'Atualizando…':!state.marketOpen?'Forex · pausa de fim de semana':'Transição entre sessões'}</span>}</div></div>;
 }
 export default function MarketSessions(){
- const {now,state}=useContext(MarketContext);
- return <section className="market-session-panel" aria-label="Sessões e ativos para acompanhar"><div className="session-heading"><div><span className="eyebrow"><Globe2 size={14}/> SESSÕES DO MERCADO</span><h2>{!state?'Preparando seu radar…':!state.marketOpen?'Forex · pausa de fim de semana':state.active.length?state.active.map(w=>w.session.region).join(' + '):'Transição entre sessões'}</h2><p>{!state?'Consultando o relógio local.':state.active.length>1?'Sessões simultâneas. Compare os pares antes de escolher seu setup.':state.marketOpen?'Ativos para acompanhar nesta faixa de horário.':'Use a pausa para revisar suas operações e preparar a semana.'}</p></div><span className="session-clock"><Clock3 size={15}/>{now===null?'—':clock(now)} · Brasília</span></div>
- <div className="session-strips">{sessions.map(s=>{const active=state?.active.find(w=>w.session.id===s.id);const upcoming=state?.windows.find(w=>w.session.id===s.id&&w.start>(now||0));return <div className={'session-strip '+(active?'is-active':'')} key={s.id}><div><b>{s.name}</b><span>{active?'Em sessão':state?'Fora da sessão':'—'}</span></div><small>{active?`Até ${clock(active.end)}`:upcoming?`Abre ${dated(upcoming.start)}`:'Calculando horários…'}</small></div>})}</div>
- {state&&<><div className="session-next"><span>{state.next?<><b>Próxima mudança</b> {state.next.label} · {dated(state.next.at)} <small>(em {Math.ceil((state.next.at-now!)/60000)} min)</small></>:'Aguardando próxima sessão'}</span></div></>}
- <details className="session-method"><summary>Como funciona este radar?</summary><p>Horários habituais de Forex, atualizados a cada 30 segundos e ao voltar à página. O horário de verão de cada região é considerado. A semana de referência vai de domingo às 17h a sexta às 17h em Nova York.</p><p>Janelas locais: Sydney 08h–17h, Tóquio 09h–18h, Londres 08h–17h e Nova York 08h–17h. São convenções de sessões Forex, não horários das bolsas de ações. Feriados, pausas e exceções da corretora não são verificados neste radar.</p><p>Os pares são sugestões de acompanhamento por região, não um ranking de oportunidades ou indicação de compra/venda. Confira spread, notícias e confirmação do seu plano.</p><a href="https://www.oanda.com/us-en/skills-and-insights/education/trading-asset-classes/forex/when-is-the-best-time-for-forex-trading/" target="_blank" rel="noopener noreferrer">Referência sobre sessões ↗</a></details><p className="session-footnote">Horários habituais · feriados e exceções da corretora podem alterar a atividade.</p></section>;
+ const {state}=useContext(MarketContext);
+ const regions=state?.active.map(w=>w.session.id).sort().join(',')||'';
+ const names=state?.active.map(w=>w.session.name).join(' · ');
+ type Item={title:string;url:string;source:string;at:number;region:string};
+ const [feed,setFeed]=useState<{regions:string;items:Item[];failed:boolean}|null>(null);
+ useEffect(()=>{if(!regions)return;let stopped=false;const ctrl=new AbortController();async function refresh(){try{const res=await fetch('/api/session-news?regions='+regions,{signal:ctrl.signal});if(!res.ok)throw Error();const data=await res.json();if(!stopped)setFeed({regions,items:data.items,failed:data.failed})}catch{if(!stopped)setFeed({regions,items:[],failed:true})}}void refresh();const timer=setInterval(refresh,300000);return()=>{stopped=true;ctrl.abort();clearInterval(timer)}},[regions]);
+ const current=feed?.regions===regions?feed:null;
+ return <section className="panel economic-wire"><header><span aria-hidden="true">◉</span><h2>Notícias econômicas</h2>{names&&<b>{names}</b>}</header>{current?.items.length&&regions?<div>{current.items.slice(0,3).map(n=><a key={n.url} href={n.url} target="_blank" rel="noopener noreferrer"><strong>{n.title}</strong><span>{n.region} · {n.source} · {dated(n.at)} (Brasília)</span></a>)}</div>:<p>{!state?'Carregando sessão…':!regions?'Sem sessão ativa.':!current?'Buscando manchetes…':current.failed?'Noticiário temporariamente indisponível.':'Nenhuma manchete econômica recente para esta sessão.'}</p>}</section>
 }
-
 export function ActiveSessionNames(){const {state}=useContext(MarketContext);if(!state?.active.length)return null;return <div aria-label="Sessões ativas" style={{marginTop:3,color:'#83c5ff',fontSize:14,fontWeight:650}}>{state.active.map(w=>w.session.name).join(' · ')}</div>}
 
 const referencePips:Record<string,number>={'EUR/USD':0.1,'AUD/USD':0.1,'USD/JPY':0.1,'USD/CAD':0.2,'GBP/USD':0.3,'EUR/GBP':0.4,'EUR/JPY':0.5,'AUD/JPY':0.9,'GBP/JPY':1};
@@ -35,6 +38,6 @@ export function SessionSpreadStrip(){
  const pairs=[...new Set(state.active.flatMap(w=>[...w.session.assets]))].filter(p=>Number.isFinite(referencePips[p])).sort((a,b)=>referencePips[a]-referencePips[b]||a.localeCompare(b)).slice(0,3);
  if(!pairs.length)return null;
  return <div style={{gridColumn:'1 / -1',minWidth:0,textAlign:'center',paddingBottom:8}}>
- <div style={{display:'flex',justifyContent:'center',flexWrap:'wrap',gap:'4px 16px'}}>{pairs.map(p=><span key={p} style={{color:'#8dd5ff',fontSize:14,fontWeight:750,textShadow:'0 0 8px #389fff88'}}>{p} <small style={{color:'#b5c3d2',textShadow:'none'}}>{referencePips[p].toLocaleString('pt-BR')}</small></span>)}</div>
- <a href="https://www.tickmill.com/eu/instruments/forex/" target="_blank" rel="noopener noreferrer" title="Referência Tickmill consultada em 24/11/2026. Sessões habituais; não verifica feriados nem a disponibilidade na conta." style={{color:'#b4bcc5',fontSize:12}}>Spread típico em pips · não é cotação ao vivo</a></div>
+ <div style={{display:'flex',justifyContent:'center',flexWrap:'wrap',gap:'4px 16px'}}>{pairs.map(p=><span key={p} style={{color:'#8dd5ff',fontSize:14,fontWeight:750,textShadow:'0 0 8px #389fff88'}}>{p}</span>)}</div>
+</div>
 }
