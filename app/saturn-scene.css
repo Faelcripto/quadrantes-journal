@@ -1,6 +1,18 @@
-.workspace.saturn-workspace{background-color:#070a11;background-image:linear-gradient(180deg,rgba(7,10,17,.65),#08090b 75vh),url('/saturno-quadrantes.webp');background-position:center top;background-repeat:no-repeat;background-size:100% auto}
-.workspace .page-content .title-row.saturn-sky{position:relative;isolation:isolate;overflow:hidden;min-height:clamp(140px,15vw,200px);padding:clamp(16px,3vw,36px);border-radius:14px;background-color:#070b13;background-image:linear-gradient(90deg,rgba(4,7,12,.88),rgba(4,7,12,.52) 48%,transparent 80%),url('/saturno-quadrantes.webp');background-repeat:no-repeat;background-size:cover,cover;background-position:center,center 35%;border:1px solid #29303a}
-.saturn-sky>div,.saturn-sky>button{position:relative;z-index:1}.saturn-sky .saturn-meteor{pointer-events:none;position:absolute;left:68%;top:9%;width:clamp(48px,8vw,115px);height:2px;opacity:0;border-radius:100%;background:linear-gradient(90deg,#f3fcff,#93caff70,transparent);filter:drop-shadow(0 0 3px #aadaff);animation:quadrantes-meteor 13s linear infinite}
-@keyframes quadrantes-meteor{0%,79%{opacity:0;transform:translate(0,0) rotate(-21deg)}81%{opacity:.86}89%,100%{opacity:0;transform:translate(-24vw,9.2vw) rotate(-21deg)}}
-@media(max-width:650px){.workspace .page-content .title-row.saturn-sky{background-position:center,72% 32%;background-size:cover,auto 185%;min-height:148px}}
-@media(prefers-reduced-motion:reduce){.saturn-sky .saturn-meteor{animation:none;display:none}}
+/* One scene shared by the sidebar, header and scrolling workspace. */
+.orbit-shell[data-slot="sidebar-wrapper"]{position:relative;isolation:isolate;background:#050812}
+.orbit-universe{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none;background:linear-gradient(0deg,#03070e55,transparent 65%),url('/saturno-quadrantes.webp') center center/cover no-repeat,#060912}
+.orbit-universe i{display:block;position:absolute;pointer-events:none}
+.orbit-dust{inset:-8%;background-repeat:repeat;animation:orbit-drift 58s ease-in-out infinite alternate}
+.orbit-dust.far{background-image:radial-gradient(1px 1px at 21% 38%,#d2eaff99 75%,transparent),radial-gradient(1px 1px at 74% 72%,#c3d9f07a 75%,transparent);background-size:137px 169px,227px 191px}
+.orbit-dust.near{background-image:radial-gradient(1.3px 1.3px at 31% 64%,#c4e7ffd9 45%,transparent),radial-gradient(1.6px 1.6px at 80% 24%,#ffd2a899 45%,transparent);background-size:263px 237px,373px 317px;animation-duration:32s;animation-direction:alternate-reverse}
+.orbit-haze{inset:-8%;background:radial-gradient(ellipse at 58% 64%,#1582c325,transparent 45%),radial-gradient(ellipse at 78% 35%,#ed8a3d29,transparent 32%);animation:orbit-drift 24s ease-in-out alternate infinite}
+.orbit-comet{left:69%;top:17%;width:100px;height:2px;border-radius:100%;opacity:0;background:linear-gradient(90deg,#fff,#9dd9ff77,transparent);animation:orbit-comet 14s linear infinite}
+@keyframes orbit-drift{from{transform:translate3d(-1%,-1%,0)}to{transform:translate3d(3%,2%,0)}}
+@keyframes orbit-comet{0%,75%{opacity:0;transform:translate(0,0) rotate(-23deg)}78%{opacity:.9}89%,100%{opacity:0;transform:translate(-34vw,14vw) rotate(-23deg)}}
+.orbit-shell .workspace.saturn-workspace,.orbit-shell .workspace .page-content{background:transparent!important}.orbit-shell .page-content{margin-inline:auto;width:100%;max-width:1480px}
+.orbit-shell .workspace .page-content .saturn-sky{display:flex;align-items:center;min-height:clamp(115px,12vw,175px);background:transparent!important;border:0;text-shadow:0 2px 10px #000}
+.orbit-shell .workspace .topbar,.orbit-shell [data-slot="sidebar-inner"]{background:rgb(5 9 17 / 82%)!important}
+.orbit-shell .workspace .panel,.orbit-shell .workspace .metric,.orbit-shell .workspace .module-tabs button:not([aria-pressed=true]){background:linear-gradient(125deg,rgba(9,14,24,.77),rgba(6,9,16,.67))!important;border-color:rgba(204,219,240,.21);box-shadow:inset 0 1px 0 #ffffff09,0 6px 20px #0002}
+@supports (backdrop-filter:blur(4px)){.orbit-shell .workspace .panel,.orbit-shell .workspace .metric{backdrop-filter:blur(4px)}}
+@media(max-width:720px){.orbit-universe{background-position:70% center}.orbit-shell .workspace .panel,.orbit-shell .workspace .metric{backdrop-filter:none}}
+@media(prefers-reduced-motion:reduce){.orbit-universe i{animation:none!important}.orbit-comet{display:none!important}}
