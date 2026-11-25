@@ -32,12 +32,23 @@ export default function MarketSessions(){
 export function ActiveSessionNames(){const {state}=useContext(MarketContext);if(!state?.active.length)return null;return <div aria-label="Sessões ativas" style={{marginTop:3,color:'#83c5ff',fontSize:14,fontWeight:650}}>{state.active.map(w=>w.session.name).join(' · ')}</div>}
 
 const referencePips:Record<string,number>={'EUR/USD':0.1,'AUD/USD':0.1,'USD/JPY':0.1,'USD/CAD':0.2,'GBP/USD':0.3,'EUR/GBP':0.4,'EUR/JPY':0.5,'AUD/JPY':0.9,'GBP/JPY':1};
+// Regular Tickmill XAUUSD session: Mon–Fri 01:02–23:57 server time (NY + 7h).
+const goldClock=new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',weekday:'short',hour:'2-digit',minute:'2-digit',hourCycle:'h23'});
+function goldSession(at:number){
+ const parts=goldClock.formatToParts(at);
+ const get=(key:string)=>parts.find(p=>p.type===key)?.value;
+ const day=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(get('weekday')||'');
+ const total=(Number(get('hour'))+7)*60+Number(get('minute'));
+ const serverDay=(day+Math.floor(total/1440))%7,minute=total%1440;
+ return serverDay>=1&&serverDay<=5&&minute>=62&&minute<=1437;
+}
 export function SessionSpreadStrip(){
- const {state}=useContext(MarketContext);
+ const {now,state}=useContext(MarketContext);
  if(!state?.marketOpen||!state.active.length)return null;
  const pairs=[...new Set(state.active.flatMap(w=>[...w.session.assets]))].filter(p=>Number.isFinite(referencePips[p])).sort((a,b)=>referencePips[a]-referencePips[b]||a.localeCompare(b)).slice(0,3);
+ if(now!==null&&goldSession(now))pairs.push('XAU/USD');
  if(!pairs.length)return null;
  return <div style={{gridColumn:'1 / -1',minWidth:0,textAlign:'center',paddingBottom:8}}>
- <div style={{display:'flex',justifyContent:'center',flexWrap:'wrap',gap:'4px 16px'}}>{pairs.map(p=><span key={p} style={{color:'#8dd5ff',fontSize:14,fontWeight:750,textShadow:'0 0 8px #389fff88'}}>{p}</span>)}</div>
+ <div style={{display:'flex',justifyContent:'center',flexWrap:'wrap',gap:'4px 16px'}}>{pairs.map(p=><span key={p} title={p==='XAU/USD'?'Ouro · horário regular. Confira feriados e disponibilidade no MT5.':undefined} style={{color:'#8dd5ff',fontSize:14,fontWeight:750,textShadow:'0 0 8px #389fff88'}}>{p}</span>)}</div>
 </div>
 }
