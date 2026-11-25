@@ -45,7 +45,7 @@ function goldSession(at:number){
 export function SessionSpreadStrip(){
  const {now,state}=useContext(MarketContext);
  if(!state?.marketOpen||!state.active.length)return null;
- const pairs=[...new Set(state.active.flatMap(w=>[...w.session.assets]))].filter(p=>Number.isFinite(referencePips[p])).sort((a,b)=>referencePips[a]-referencePips[b]||a.localeCompare(b)).slice(0,3);
+ const pairs:string[]=[...new Set(state.active.flatMap(w=>[...w.session.assets]))].filter(p=>Number.isFinite(referencePips[p])).sort((a,b)=>referencePips[a]-referencePips[b]||a.localeCompare(b)).slice(0,3);
  if(now!==null&&goldSession(now))pairs.push('XAU/USD');
  if(!pairs.length)return null;
  return <div style={{gridColumn:'1 / -1',minWidth:0,textAlign:'center',paddingBottom:8}}>
