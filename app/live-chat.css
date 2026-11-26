@@ -3,3 +3,28 @@
 @keyframes ql-rocket{0%{opacity:0;transform:translate3d(-18px,12px,-80px) rotate(-24deg)}15%{opacity:1}100%{opacity:0;transform:translate3d(30px,-155px,75px) rotate(-24deg)}}
 @keyframes ql-bolt{0%{opacity:0;transform:scale(.45) rotateY(-65deg)}25%{opacity:1;transform:translateZ(35px) rotateY(15deg)}100%{opacity:0;transform:translate3d(0,-58px,55px) rotate(-8deg)}}
 @media(prefers-reduced-motion:reduce){.ql-fx span{animation:none;bottom:20%}}
+
+/* Only the Live tab trades the decorative title wave for room above the fold. */
+[data-linha] .orbit-shell .workspace .page-content:has(>.ql-studio) .saturn-sky,
+.orbit-shell .workspace .page-content:has(>.ql-studio) .saturn-sky{display:block;min-height:0;margin:0;padding:4px 0;text-align:center}
+.page-content:has(>.ql-studio) .saturn-sky::after,.page-content:has(>.ql-studio) .saturn-sky p{display:none}
+.ql-studio{width:100%;max-width:100rem;margin:0 auto 1rem;container-type:inline-size}
+.ql-heading,.ql-links{display:flex;align-items:center;flex-wrap:wrap;gap:.6rem 1rem}
+.ql-heading{justify-content:center;margin:.3rem 0 .85rem}.ql-heading h2{font-size:1.12rem;line-height:1.25;margin:0}
+.ql-broadcast{display:grid;gap:1rem;align-items:start}.ql-video,.ql-chat-glass{min-width:0}
+.ql-video iframe{display:block;width:100%;height:auto;aspect-ratio:16/9;border:1px solid #ffffff24;border-radius:14px;background:#040609}
+.ql-video p{margin:.6rem 0;color:#bcc8d5;white-space:pre-wrap}.ql-links a{display:inline-flex;align-items:center;gap:.35rem;color:#ffbd79;padding:.4rem 0}
+.ql-chat-glass{position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(145deg,#101a273d,#060c1945);border:1px solid #a6bfd741;border-radius:16px}
+.ql-chat-glass .ql-chat{position:relative;z-index:1;background:transparent;border:0;padding:clamp(.75rem,1.5vw,1.1rem);gap:.55rem}
+.ql-chat-glass .ql-log{background:#02060e36;scrollbar-gutter:stable;height:clamp(10rem,27vh,22rem)}
+.ql-chat-glass .ql-log b,.ql-chat-glass .ql-tools>button:first-child{font-family:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;letter-spacing:.035em;color:#ffd09e}
+.ql-sky-effects{position:absolute;inset:0;pointer-events:none;overflow:hidden;perspective:480px}
+.ql-sky-effects i{position:absolute;opacity:0;font-style:normal;pointer-events:none}
+.ql-flight{bottom:4%;right:25%;font-size:2rem;filter:drop-shadow(-3px 6px 4px #ff904859);animation:ql-flight-path 31s 2s infinite}
+.ql-flash{right:14%;top:24%;font:bold 2.3rem Georgia,serif;color:#ffd18b;animation:ql-soft-bolt 39s 9s infinite}
+.ql-meteor{top:13%;right:-10%;width:5rem;height:2px;border-radius:100%;background:linear-gradient(90deg,#eef9ff,#85caff88,transparent);animation:ql-star-pass 23s 6s infinite}
+@keyframes ql-flight-path{0%{opacity:0;transform:translate3d(-12px,0,-100px) rotate(-30deg)}2%{opacity:.42}11%,100%{opacity:0;transform:translate3d(48px,-175px,60px) rotateY(32deg) rotate(-20deg)}}
+@keyframes ql-soft-bolt{0%,2%,100%{opacity:0}1%{opacity:.4;transform:translateY(4px)}}
+@keyframes ql-star-pass{0%{opacity:0;transform:rotate(-30deg)}1%{opacity:.55}6%,100%{opacity:0;transform:translate(-240px,138px) rotate(-30deg)}}
+@container (min-width:46rem){.ql-broadcast.is-active{grid-template-columns:minmax(0,1fr) clamp(17rem,29cqw,25rem)}.ql-chat-glass .ql-log{height:clamp(10rem,calc(38cqw - 8rem),25rem)}}
+@media(prefers-reduced-motion:reduce){.ql-sky-effects{display:none}.ql-sky-effects i{animation:none}}
