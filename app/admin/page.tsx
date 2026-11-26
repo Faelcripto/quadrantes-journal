@@ -3,6 +3,7 @@ import {isSiteAdmin,readSiteContent} from '@/lib/site-content-server';
 import {redirect} from 'next/navigation';
 import AdminEditor from './editor';
 import './admin.css';
+import './workbench.css';
 export const dynamic='force-dynamic';
 export default async function AdminPage(){
  const supabase=await createClient();const {data:{user}}=await supabase.auth.getUser();
