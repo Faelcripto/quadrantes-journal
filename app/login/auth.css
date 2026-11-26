@@ -8,3 +8,19 @@
 .auth-submit{background:var(--copper);border:0;color:#1b1008;font-weight:750;padding:.85rem;border-radius:.65rem;margin-top:.25rem}.auth-form button{cursor:pointer;min-height:44px}.auth-form button:disabled{opacity:.55;cursor:wait}.auth-links{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0 1rem;margin-top:.85rem}.auth-links button{font-size:.9375rem;color:#e4e8ef}.auth-links button:hover{text-decoration:underline}.auth-error,.auth-message{margin:0;padding:.75rem;border-radius:.6rem;line-height:1.45}.auth-error{color:#ffc8c8;background:#351d25}.auth-message{color:#c3f5d7;background:#122e25}
 @media(max-width:720px){.auth-shell{max-width:26rem;grid-template-columns:minmax(0,1fr);gap:1.5rem}.auth-story{text-align:center}.auth-story h1{margin:.8rem auto 0;font-size:clamp(1.3rem,5vw,1.8rem);letter-spacing:-.035em}.auth-trace{display:none}.auth-brand img{width:6rem;height:3rem}}
 @media(prefers-reduced-motion:reduce){.auth-trace{display:none}}
+
+/* The same black-to-midnight sky and copper trace as the workspace. */
+.auth-page{background:linear-gradient(180deg,#000002,#00040a 20%,#000b16 49%,#010a12 73%,#03050c 92%,#010207)}
+.auth-story{text-align:center;isolation:isolate}
+.auth-story h1{margin:0 auto;max-width:12ch}
+.auth-trace{display:block;position:relative;width:100%;max-width:none;height:clamp(5rem,11vw,9rem);margin:1.5rem auto 0;background-size:100% auto;opacity:.94}
+.auth-panel{background:none;border:none;box-shadow:none}
+.auth-form h2:has(.auth-brand){text-align:center}
+.auth-meteors{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:-1}
+.auth-meteors i{position:absolute;top:8%;left:5%;width:clamp(44px,7vw,104px);height:1px;background:linear-gradient(90deg,transparent,#a8c8ed 85%,#fff);opacity:0;animation:auth-flight 12s ease-in infinite}
+.auth-meteors i:nth-child(2){top:13%;left:60%;animation-delay:-5s;animation-duration:17s}
+.auth-meteors i:nth-child(3){top:49%;left:-6%;animation-delay:-9s;animation-duration:19s}
+.auth-meteors i:nth-child(4){top:64%;left:57%;animation-delay:-4s;animation-duration:23s}
+@keyframes auth-flight{0%,12%,100%{opacity:0}1.5%{opacity:.8}0%{transform:rotate(24deg)}12%,100%{transform:translate(28vw,12.5vw) rotate(24deg)}}
+@media(max-width:720px){.auth-trace{height:3.25rem;width:min(85%,19rem);margin:.4rem auto 0}.auth-shell{gap:.5rem}.auth-story h1{max-width:24ch}.auth-panel{padding-top:.5rem}}
+@media(prefers-reduced-motion:reduce){.auth-meteors,.auth-trace{display:none}}

@@ -9,7 +9,7 @@ export default function AuthForm() {
   const [busy, setBusy] = useState(false);
   const [message, setMessage] = useState('');
   const [error, setError] = useState(query.has('error') ? 'Este link expirou ou já foi utilizado. Solicite um novo link.' : '');
-  const titles = { login: 'Seu dashboard', signup: 'Criar conta', reset: 'Recuperar acesso', password: 'Defina sua nova senha' };
+  const titles = { login: 'Método Quadrantes', signup: 'Criar conta', reset: 'Recuperar acesso', password: 'Defina sua nova senha' };
   function change(next: Mode) { setMode(next); setMessage(''); setError(''); }
   async function submit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault(); setBusy(true); setMessage(''); setError('');
@@ -41,7 +41,7 @@ export default function AuthForm() {
     } catch { setError('Falha de conexão. Tente novamente.'); }
     finally { setBusy(false); }
   }
-  return <div className="auth-form"><h2>{titles[mode]}</h2><form onSubmit={submit} key={mode}>
+  return <div className="auth-form"><h2>{mode === 'login' ? <span className="auth-brand"><img src="/mq-cor.webp" width={144} height={72} alt=""/><span>MÉTODO</span><strong>QUADRANTES</strong></span> : titles[mode]}</h2><form onSubmit={submit} key={mode}>
     {mode !== 'password' && <label>E-mail<input name="email" type="email" autoComplete="email" placeholder="voce@exemplo.com" required maxLength={254} /></label>}
     {mode !== 'reset' && <label>Senha<input name="password" type="password" autoComplete={mode === 'login' ? 'current-password' : 'new-password'} minLength={mode === 'login' ? 1 : 8} required maxLength={128} placeholder={mode === 'login' ? 'Sua senha' : 'Pelo menos 8 caracteres'} /></label>}
     {error && <p className="auth-error" role="alert">{error}</p>}{message && <p className="auth-message" role="status">{message}</p>}
