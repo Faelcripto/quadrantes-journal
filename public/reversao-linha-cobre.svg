@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 420 222" role="img" aria-labelledby="title desc">
+<title id="title">Reversão · Método Quadrantes</title><desc id="desc">Ombro-cabeça-ombro e sua forma invertida. Na segunda linha, topo e fundo arredondados. Exemplos ilustrativos.</desc>
+<defs><linearGradient id="metal" x1="0" x2="0" y1="0" y2="1" gradientUnits="objectBoundingBox"><stop stop-color="#ffe6b8"/><stop offset=".35" stop-color="#eaaa70"/><stop offset=".7" stop-color="#cd723d"/><stop offset="1" stop-color="#975030"/></linearGradient><filter id="h" x="-10%" y="-75%" width="120%" height="250%"><feGaussianBlur stdDeviation="4"/></filter>
+<linearGradient id="bg" x2="1" y2="1"><stop stop-color="#102030"/><stop offset=".56" stop-color="#060d18"/><stop offset="1" stop-color="#10202a"/></linearGradient>
+<pattern id="grid" width="28" height="22" patternUnits="userSpaceOnUse"><path d="M28 0H0V22" fill="none" stroke="#aec7e3" opacity=".09"/></pattern>
+<path id="oco" d="M14 91 34 78 46 81 68 48 88 64 113 31 137 64 157 48 183 73 200 82 209 78 228 90 246 74 266 102 290 74 307 89 333 63 346 67 367 49 381 54 405 33"/>
+<path id="round" d="M14 201 36 180 53 161 65 168 79 150 90 165 104 144 116 160 130 143 142 158 155 149 166 166 179 157 200 183 214 178 231 191 244 183 257 198 270 188 284 202 298 190 311 198 324 184 338 191 351 174 362 178 379 157 390 162 405 146"/></defs>
+<rect width="420" height="222" rx="12" fill="url(#bg)"/><rect width="420" height="222" rx="12" fill="url(#grid)"/>
+<path d="M14 112H406" stroke="#93b1c4" opacity=".18"/>
+<g font-family="system-ui,sans-serif" font-size="15" font-weight="600" fill="#e3e9ef"><text x="15" y="20">OCO e OCO invertido</text><text x="15" y="133">Topo e fundo arredondados</text></g>
+<g fill="none" stroke="#a7c2d3" stroke-dasharray="3 4" opacity=".58"><path d="M61 64H188 M219 74H342 M57 168H194 M232 183H359"/></g>
+<g fill="none" stroke="#9bbad0" opacity=".46"><path d="M48 162Q109 121 180 157 M228 190Q283 222 350 177"/></g>
+<g fill="none" stroke-linecap="round" stroke-linejoin="round"><use xlink:href="#oco" stroke="#d67535" stroke-width="5" opacity=".52" filter="url(#h)"/><use xlink:href="#oco" transform="translate(0,1.6)" stroke="#66361f" stroke-width="4"/><use xlink:href="#oco" stroke="url(#metal)" stroke-width="2.8"/><use xlink:href="#oco" transform="translate(0,-.6)" stroke="#ffe4ba" stroke-width=".6" opacity=".82"/>
+<use xlink:href="#round" stroke="#d67535" stroke-width="5" opacity=".52" filter="url(#h)"/><use xlink:href="#round" transform="translate(0,1.6)" stroke="#66361f" stroke-width="4"/><use xlink:href="#round" stroke="url(#metal)" stroke-width="2.8"/><use xlink:href="#round" transform="translate(0,-.6)" stroke="#ffe4ba" stroke-width=".6" opacity=".82"/></g></svg>
