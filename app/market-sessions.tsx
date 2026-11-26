@@ -42,13 +42,18 @@ function goldSession(at:number){
  const serverDay=(day+Math.floor(total/1440))%7,minute=total%1440;
  return serverDay>=1&&serverDay<=5&&minute>=62&&minute<=1437;
 }
+// Regional watchlist, not a live quote or broker availability feed.
+const indicesBySession={sydney:['AUS200'],tokyo:['JP225'],london:['UK100','DE40'],newyork:['US500','USTEC','US30']} as const;
 export function SessionSpreadStrip(){
  const {now,state}=useContext(MarketContext);
  if(!state?.marketOpen||!state.active.length)return null;
  const pairs:string[]=[...new Set(state.active.flatMap(w=>[...w.session.assets]))].filter(p=>Number.isFinite(referencePips[p])).sort((a,b)=>referencePips[a]-referencePips[b]||a.localeCompare(b)).slice(0,3);
  if(now!==null&&goldSession(now))pairs.push('XAU/USD');
+ const indices=new Set<string>();
+ for(const w of state.active)for(const symbol of indicesBySession[w.session.id])indices.add(symbol);
+ pairs.push(...indices);
  if(!pairs.length)return null;
  return <div style={{gridColumn:'1 / -1',minWidth:0,textAlign:'center',paddingBottom:8}}>
- <div style={{display:'flex',justifyContent:'center',flexWrap:'wrap',gap:'4px 16px'}}>{pairs.map(p=><span key={p} title={p==='XAU/USD'?'Ouro · horário regular. Confira feriados e disponibilidade no MT5.':undefined} style={{color:'#8dd5ff',fontSize:14,fontWeight:750,textShadow:'0 0 8px #389fff88'}}>{p}</span>)}</div>
+ <div style={{display:'flex',justifyContent:'center',flexWrap:'wrap',gap:'4px 16px'}}>{pairs.map(p=><span key={p} title={p==='XAU/USD'?'Ouro · horário regular. Confira feriados e disponibilidade no MT5.':indices.has(p)?'Índice em foco pela sessão regional. Confirme o horário de negociação no MT5.':undefined} style={{color:'#8dd5ff',fontSize:14,fontWeight:750,textShadow:'0 0 8px #389fff88'}}>{p}</span>)}</div>
 </div>
 }
