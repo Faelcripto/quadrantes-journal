@@ -1,0 +1,5 @@
+.oco-triptych{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:1px solid #74513c;border-radius:16px;overflow:hidden;margin:0 0 16px;background:radial-gradient(ellipse at 50% 105%,#332319 0,transparent 60%),linear-gradient(125deg,#0c1722,#070c13)}
+.oco-triptych a{display:grid;min-width:0;text-align:center;color:#f5e2ce;text-decoration:none;padding-top:clamp(10px,2vw,20px);font-size:clamp(.875rem,2vw,1.25rem);font-weight:650}
+.oco-triptych a+a{box-shadow:inset 1px 0 #ecc49f22}.oco-triptych a:hover,.oco-triptych a:focus-visible{background-color:#ffd3a50c;color:white}.oco-triptych a:focus-visible{outline:2px solid #ffc397;outline-offset:-3px}
+.oco-triptych i{width:100%;aspect-ratio:240/190;background:url('/oco-quadrantes.svg') left center/300% 100% no-repeat;display:block}.oco-triptych a:nth-child(2) i{background-position:center}.oco-triptych a:nth-child(3) i{background-position:right}
+.playbook[id^="setup-"]{scroll-margin-top:6rem}

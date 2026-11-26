@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 190" role="img" aria-labelledby="t"><title id="t">Correção, Reversão e Continuação: ombro, cabeça e ombro</title>
+<defs><linearGradient id="cu" x2="0" y2="1"><stop stop-color="#fff0cf"/><stop offset=".48" stop-color="#efb27b"/><stop offset="1" stop-color="#b86d42"/></linearGradient><path id="wave" d="M46 158 130 74 240 151 360 18 480 151 590 74 674 158"/></defs>
+<g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M18 74H702" stroke="#dca677" stroke-width="1.5" opacity=".52"/><use href="#wave" stroke="#a96834" stroke-width="11" opacity=".12"/><use href="#wave" stroke="#774326" stroke-width="6" transform="translate(0 2)"/><use href="#wave" stroke="url(#cu)" stroke-width="4"/></g>
+<g fill="#ffe3bb"><circle cx="130" cy="74" r="3.5"/><circle cx="360" cy="18" r="4"/><circle cx="590" cy="74" r="3.5"/></g></svg>
