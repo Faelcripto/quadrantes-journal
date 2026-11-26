@@ -139,7 +139,7 @@ body {
 :root,.dark {--background:var(--site-base,#030303);--foreground:#edf0f5;--card:var(--site-panel,#0d0d0d);--card-foreground:#edf0f5;--popover:#141414;--popover-foreground:#edf0f5;--primary:var(--brand-accent,#f99545);--primary-foreground:#13100e;--secondary:#191919;--secondary-foreground:#edf0f5;--muted:#191919;--muted-foreground:#969da9;--accent:#202020;--accent-foreground:#ffffff;--border:#262626;--input:#363636;--ring:var(--brand-accent,#f99545);--sidebar:var(--site-side,#080808);--sidebar-foreground:#a4abb6;--sidebar-accent:#2c241e;--sidebar-accent-foreground:var(--brand-accent,#f99545);--sidebar-border:#262626;}
 
 /* Quadrantes terminal palette */
-body .workspace,body .auth-page,body:has(.admin-page){
+body .workspace,body:has(.admin-page){
  background:radial-gradient(ellipse 55rem 26rem at 87% 1%,#60361d 0%,#322317 35%,transparent 76%),#0c0c10;color:#f8f5f2}
 body .workspace .topbar{background:linear-gradient(105deg,#101014 35%,#322318 78%,#46301f);border-color:#433329}
 body .app-sidebar [data-slot=sidebar-inner]{background:linear-gradient(175deg,#101013 55%,#221b16)}
@@ -160,7 +160,7 @@ body .workspace :is(.day,.annual-month).win{background:#092a20;border-color:#235
 body .workspace :is(.day,.annual-month).loss{background:#30111c;border-color:#67273a;color:#ff9aaa}
 body .workspace .day.today{outline-color:#f99545}
 body .workspace .day:not(.blank):hover{border-color:#c4aa97}
-body .auth-page .auth-story{background:radial-gradient(ellipse at bottom left,#52321e,transparent 66%),#101014;border-color:#342c25}
+body .auth-page .auth-story{background:none;border:0;box-shadow:none}
 body .auth-panel .auth-form{padding:clamp(16px,3vw,32px);background:#141210;border:1px solid #3a3028;border-radius:14px}
 @media(min-width:1100px){body .workspace .chart-row{grid-template-columns:minmax(0,2.2fr) minmax(240px,1fr)}}
 
