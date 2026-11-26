@@ -9,7 +9,7 @@ export default function AuthForm() {
   const [busy, setBusy] = useState(false);
   const [message, setMessage] = useState('');
   const [error, setError] = useState(query.has('error') ? 'Este link expirou ou já foi utilizado. Solicite um novo link.' : '');
-  const titles = { login: 'Bem-vindo de volta', signup: 'Crie seu diário', reset: 'Recuperar acesso', password: 'Defina sua nova senha' };
+  const titles = { login: 'Seu dashboard', signup: 'Criar conta', reset: 'Recuperar acesso', password: 'Defina sua nova senha' };
   function change(next: Mode) { setMode(next); setMessage(''); setError(''); }
   async function submit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault(); setBusy(true); setMessage(''); setError('');
@@ -41,10 +41,10 @@ export default function AuthForm() {
     } catch { setError('Falha de conexão. Tente novamente.'); }
     finally { setBusy(false); }
   }
-  return <div className="auth-form"><p className="auth-eyebrow">SEU WORKSPACE PESSOAL</p><h2>{titles[mode]}</h2><p className="auth-subtitle">Suas operações e seu gerenciamento em um só lugar.</p><form onSubmit={submit} key={mode}>
+  return <div className="auth-form"><h2>{titles[mode]}</h2><form onSubmit={submit} key={mode}>
     {mode !== 'password' && <label>E-mail<input name="email" type="email" autoComplete="email" placeholder="voce@exemplo.com" required maxLength={254} /></label>}
     {mode !== 'reset' && <label>Senha<input name="password" type="password" autoComplete={mode === 'login' ? 'current-password' : 'new-password'} minLength={mode === 'login' ? 1 : 8} required maxLength={128} placeholder={mode === 'login' ? 'Sua senha' : 'Pelo menos 8 caracteres'} /></label>}
     {error && <p className="auth-error" role="alert">{error}</p>}{message && <p className="auth-message" role="status">{message}</p>}
-    <button className="auth-submit" disabled={busy}>{busy ? 'Aguarde…' : mode === 'login' ? 'Entrar no Journal →' : mode === 'signup' ? 'Criar minha conta →' : mode === 'reset' ? 'Enviar link de recuperação' : 'Salvar nova senha'}</button>
-  </form><div className="auth-links">{mode === 'login' ? <><button disabled={busy} onClick={() => change('reset')}>Esqueci minha senha</button><p>Ainda não tem conta? <button disabled={busy} onClick={() => change('signup')}>Criar conta</button></p></> : <button disabled={busy} onClick={() => change('login')}>Voltar para entrar</button>}</div><p className="auth-private">Seu diário é individual. Outros usuários não têm acesso aos seus registros.</p></div>;
+    <button className="auth-submit" disabled={busy}>{busy ? 'Aguarde…' : mode === 'login' ? 'Entrar no dashboard' : mode === 'signup' ? 'Criar minha conta' : mode === 'reset' ? 'Enviar link de recuperação' : 'Salvar nova senha'}</button>
+  </form><div className="auth-links">{mode === 'login' ? <><button disabled={busy} onClick={() => change('reset')}>Esqueci minha senha</button><button disabled={busy} onClick={() => change('signup')}>Criar conta</button></> : <button disabled={busy} onClick={() => change('login')}>Voltar para entrar</button>}</div></div>;
 }

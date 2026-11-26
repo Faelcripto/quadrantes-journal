@@ -6,5 +6,12 @@ import './auth.css';
 export const dynamic="force-dynamic";
 export default async function Login() {
   const {content:{appearance}}=await readSiteContent(await createClient(),true);
-  return <main className="auth-page"><section className="auth-story"><div className="mq-signature" style={{display:"flex",width:"100%",flexDirection:"column",alignItems:"center",textAlign:"center",background:"none",color:"#fff",marginInline:"auto"}}><img src="/mq-cor.webp" alt="" width={144} height={72}/><small style={{color:"#fff"}}>MÉTODO</small><strong>QUADRANTES</strong></div><div><p className="auth-eyebrow">MÉTODO DOS QUADRANTES</p><h1>{appearance.headline}</h1><p>{appearance.description}</p></div><p className="auth-motto">⚡ Paciência é o macete do game.</p></section><section className="auth-panel"><Suspense fallback={<p>Carregando…</p>}><AuthForm /></Suspense></section></main>;
+  return <main className="auth-page"><div className="auth-shell">
+    <section className="auth-story">
+      <div className="auth-brand"><img src="/mq-cor.webp" alt="" width={144} height={72}/><span>MÉTODO</span><strong>QUADRANTES</strong></div>
+      <h1>{appearance.headline==='Seu processo. Sua evolução.'?<>Paciência é o macete do game <em aria-hidden="true">⚡</em></>:appearance.headline}</h1>
+      <div className="auth-trace" aria-hidden="true"/>
+    </section>
+    <section className="auth-panel" aria-label="Acesso ao dashboard"><Suspense fallback={<p>Carregando…</p>}><AuthForm /></Suspense></section>
+  </div></main>;
 }
