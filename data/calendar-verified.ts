@@ -96,5 +96,53 @@ export const verifiedEvents:CalendarEntry[]=[
       "label": "Federal Reserve",
       "url": "https://www.federalreserve.gov/newsevents/2026-november.htm"
     }
+  },
+  {
+    "id": "nim-confianca-20261126",
+    "date": "2026-11-26",
+    "at": "2026-11-26T07:00:00Z",
+    "title": "Confiança do consumidor na Alemanha (GfK/NIM)",
+    "currency": "EUR",
+    "impact": "Moderado",
+    "source": {
+      "label": "Nürnberg Institut für Marktentscheidungen (NIM)",
+      "url": "https://www.nim.org/en/consumer-climate"
+    }
+  },
+  {
+    "id": "bce-moeda-20261126",
+    "date": "2026-11-26",
+    "at": "2026-11-26T09:00:00Z",
+    "title": "Evolução da moeda e do crédito na zona do euro",
+    "currency": "EUR",
+    "impact": "Moderado",
+    "source": {
+      "label": "Banco Central Europeu",
+      "url": "https://www.ecb.europa.eu/press/calendars/weekly/html/index.en.html"
+    }
+  },
+  {
+    "id": "bce-lagarde-cupula-20261126",
+    "date": "2026-11-26",
+    "at": "2026-11-26T09:00:00Z",
+    "title": "Participação de Christine Lagarde na Cúpula do Euro",
+    "currency": "EUR",
+    "impact": "Baixo",
+    "source": {
+      "label": "Banco Central Europeu",
+      "url": "https://www.ecb.europa.eu/press/calendars/weekly/html/index.en.html"
+    }
+  },
+  {
+    "id": "bce-ata-20261126",
+    "date": "2026-11-26",
+    "at": "2026-11-26T12:30:00Z",
+    "title": "Ata da reunião de política monetária do BCE de 28–29 de outubro",
+    "currency": "EUR",
+    "impact": "Alto",
+    "source": {
+      "label": "Banco Central Europeu",
+      "url": "https://www.ecb.europa.eu/press/calendars/weekly/html/index.en.html"
+    }
   }
 ];
