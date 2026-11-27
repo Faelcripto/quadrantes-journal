@@ -144,5 +144,137 @@ export const verifiedEvents:CalendarEntry[]=[
       "label": "Banco Central Europeu",
       "url": "https://www.ecb.europa.eu/press/calendars/weekly/html/index.en.html"
     }
+  },
+  {
+    "id": "fr-ipc-20261127",
+    "date": "2026-11-27",
+    "at": "2026-11-27T07:45:00Z",
+    "title": "Inflação ao consumidor na França · prévia de novembro",
+    "currency": "EUR",
+    "impact": "Moderado",
+    "source": {
+      "label": "Insee",
+      "url": "https://www.insee.fr/en/statistiques/9107975"
+    }
+  },
+  {
+    "id": "fr-pib-20261127",
+    "date": "2026-11-27",
+    "at": "2026-11-27T07:45:00Z",
+    "title": "PIB da França · dados detalhados do 3º trimestre",
+    "currency": "EUR",
+    "impact": "Moderado",
+    "source": {
+      "label": "Insee",
+      "url": "https://www.insee.fr/en/statistiques/9040046"
+    }
+  },
+  {
+    "id": "fr-consumo-20261127",
+    "date": "2026-11-27",
+    "at": "2026-11-27T07:45:00Z",
+    "title": "Consumo de bens das famílias na França · outubro",
+    "currency": "EUR",
+    "impact": "Moderado",
+    "source": {
+      "label": "Insee",
+      "url": "https://www.insee.fr/en/statistiques/9112025"
+    }
+  },
+  {
+    "id": "fr-emprego-20261127",
+    "date": "2026-11-27",
+    "at": "2026-11-27T07:45:00Z",
+    "title": "Emprego na França · dados detalhados do 3º trimestre",
+    "currency": "EUR",
+    "impact": "Baixo",
+    "source": {
+      "label": "Insee",
+      "url": "https://www.insee.fr/en/statistiques/8999412"
+    }
+  },
+  {
+    "id": "es-ipc-20261127",
+    "date": "2026-11-27",
+    "at": "2026-11-27T08:00:00Z",
+    "title": "Inflação ao consumidor na Espanha · prévia de novembro",
+    "currency": "EUR",
+    "impact": "Moderado",
+    "source": {
+      "label": "INE",
+      "url": "https://ine.es/daco/daco41/calen_semanal.pdf"
+    }
+  },
+  {
+    "id": "es-varejo-20261127",
+    "date": "2026-11-27",
+    "at": "2026-11-27T08:00:00Z",
+    "title": "Vendas no varejo da Espanha · outubro",
+    "currency": "EUR",
+    "impact": "Moderado",
+    "source": {
+      "label": "INE",
+      "url": "https://ine.es/daco/daco41/calen_semanal.pdf"
+    }
+  },
+  {
+    "id": "bce-ces-20261127",
+    "date": "2026-11-27",
+    "at": "2026-11-27T09:00:00Z",
+    "title": "Expectativas dos consumidores na zona do euro · outubro",
+    "currency": "EUR",
+    "impact": "Moderado",
+    "source": {
+      "label": "BCE",
+      "url": "https://www.ecb.europa.eu/press/calendars/weekly/html/index.en.html"
+    }
+  },
+  {
+    "id": "fed-cp-20261127",
+    "date": "2026-11-27",
+    "at": "2026-11-27T18:00:00Z",
+    "title": "Juros dos títulos de curto prazo de empresas nos EUA",
+    "currency": "USD",
+    "impact": "Baixo",
+    "source": {
+      "label": "Federal Reserve",
+      "url": "https://www.federalreserve.gov/newsevents/2026-november.htm"
+    }
+  },
+  {
+    "id": "fed-h15-20261127",
+    "date": "2026-11-27",
+    "at": "2026-11-27T21:15:00Z",
+    "title": "Taxas de juros de referência nos EUA (H.15)",
+    "currency": "USD",
+    "impact": "Baixo",
+    "source": {
+      "label": "Federal Reserve",
+      "url": "https://www.federalreserve.gov/newsevents/2026-november.htm"
+    }
+  },
+  {
+    "id": "fed-h8-20261127",
+    "date": "2026-11-27",
+    "at": "2026-11-27T21:15:00Z",
+    "title": "Ativos e passivos dos bancos comerciais dos EUA (H.8)",
+    "currency": "USD",
+    "impact": "Baixo",
+    "source": {
+      "label": "Federal Reserve",
+      "url": "https://www.federalreserve.gov/newsevents/2026-november.htm"
+    }
+  },
+  {
+    "id": "fed-h41-20261127",
+    "date": "2026-11-27",
+    "at": "2026-11-27T21:30:00Z",
+    "title": "Balanço do Federal Reserve e reservas bancárias (H.4.1)",
+    "currency": "USD",
+    "impact": "Baixo",
+    "source": {
+      "label": "Federal Reserve",
+      "url": "https://www.federalreserve.gov/newsevents/2026-november.htm"
+    }
   }
 ];
